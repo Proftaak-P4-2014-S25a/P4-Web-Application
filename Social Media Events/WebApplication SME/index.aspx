@@ -18,7 +18,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
-
+    <!-- Custom styles for this page -->
+    <link href="index.css" rel="stylesheet"/>
 </head>
 <body>
     <form id="form1" runat="server">

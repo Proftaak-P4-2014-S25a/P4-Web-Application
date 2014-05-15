@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="entry.aspx.cs" Inherits="WebApplication_SME.entry" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="entry.aspx.cs" Inherits="WebApplication_SME.Entry" %>
 
 <!DOCTYPE html>
 
@@ -18,7 +18,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
-
+    <!-- Custom styles for this page -->
+    <link href="entry.css" rel="stylesheet"/>
 </head>
 <body>
     <form id="form1" runat="server">

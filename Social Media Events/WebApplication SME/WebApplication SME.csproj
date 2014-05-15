@@ -66,9 +66,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="entry.aspx" />
+    <Content Include="entry.css" />
     <Content Include="index.aspx" />
+    <Content Include="index.css" />
     <Content Include="loan.aspx" />
+    <Content Include="loan.css" />
     <Content Include="login.aspx" />
+    <Content Include="login.css" />
     <Content Include="reservation.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
