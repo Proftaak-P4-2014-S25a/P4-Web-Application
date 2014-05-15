@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="index.aspx.vb" Inherits="WebApplication_SME.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WebApplication_SME.index" %>
 
 <!DOCTYPE html>
 
@@ -41,7 +41,7 @@
                             <li class="active"><a href="#">Home</a></li>
                             <li><a href="#">Reservation</a></li>
                             <li><a href="#">Loan Items</a></li>
-                            <li><a href="#">Login</a></li>
+                            <li><a href="login.aspx">Login</a></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
