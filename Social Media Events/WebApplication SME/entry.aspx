@@ -19,7 +19,7 @@
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
     <!-- Custom styles for this page -->
-    <link href="entry.css" rel="stylesheet"/>
+    <link href="entry.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -42,7 +42,8 @@
                             <li><a href="reservation.aspx">Reservation</a></li>
                             <li><a href="loan.aspx">Loan Items</a></li>
                             <li class="active"><a href="entry.aspx">Entry Control</a></li>
-                            <li><a href="login.aspx">Login</a></li>
+                            <li>
+                                <asp:HyperLink href="login.aspx" ID="btn_login" runat="server">Login</asp:HyperLink></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->

@@ -40,7 +40,8 @@
                         <li><a href="reservation.aspx">Reservation</a></li>
                         <li><a href="loan.aspx">Loan Items</a></li>
                         <li><a href="entry.aspx">Entry Control</a></li>
-                        <li class="active"><a href="login.aspx">Login</a></li>
+                        <li class="active">
+                            <asp:HyperLink href="login.aspx" ID="btn_login" runat="server">Login</asp:HyperLink></li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
@@ -55,7 +56,7 @@
                     <asp:CheckBox ID="cb_remember" runat="server" />
                     Remember me
                 </label>
-                <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="btn_sumbit" Text="Sign in" runat="server" OnClick="sumbit_Click"/>
+                <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="btn_sumbit" Text="Sign in" runat="server" OnClick="sumbit_Click" />
             </div>
         </div>
     </form>

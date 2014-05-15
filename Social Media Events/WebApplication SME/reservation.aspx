@@ -41,7 +41,8 @@
                             <li class="active"><a href="reservation.aspx">Reservation</a></li>
                             <li><a href="loan.aspx">Loan Items</a></li>
                             <li><a href="entry.aspx">Entry Control</a></li>
-                            <li><a href="login.aspx">Login</a></li>
+                            <li>
+                                <asp:HyperLink href="login.aspx" ID="btn_login" runat="server">Login</asp:HyperLink></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->

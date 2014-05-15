@@ -12,7 +12,14 @@ namespace WebApplication_SME
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["LoggedIn"] == null)
+            {
+                Session.Add("LoggedIn", false);
+            }
+            if ((bool)Session["LoggedIn"] == true)
+            {
+                btn_login.Text = "Logout";
+            }
         }
     }
 }

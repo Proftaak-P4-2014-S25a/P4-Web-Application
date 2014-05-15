@@ -74,6 +74,7 @@
     <Content Include="login.aspx" />
     <Content Include="login.css" />
     <Content Include="reservation.aspx" />
+    <Content Include="reservation.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

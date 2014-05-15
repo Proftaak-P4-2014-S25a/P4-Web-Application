@@ -12,10 +12,13 @@ namespace WebApplication_SME
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            label1.Text = Session.Keys.Count.ToString();
-            for (int i = 0; i < Session.Keys.Count; i++)
+            if (Session["LoggedIn"] == null)
             {
-                label1.Text += ", " + Session.Keys.Get(i);
+                Session.Add("LoggedIn", false);
+            }
+            if ((bool)Session["LoggedIn"] == true)
+            {
+                btn_login.Text = "Logout";
             }
         }
     }

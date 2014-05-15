@@ -39,12 +39,15 @@
                         <li><a href="reservation.aspx">Reservation</a></li>
                         <li class="active"><a href="loan.aspx">Loan Items</a></li>
                         <li><a href="entry.aspx">Entry Control</a></li>
-                        <li><a href="login.aspx">Login</a></li>
+                        <li>
+                            <asp:HyperLink href="login.aspx" ID="btn_login" runat="server">Login</asp:HyperLink></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <asp:Label ID="label1" runat="server" CssClass="lead" />
+        <div id="label" class="container ">
+            <asp:Label ID="label1" runat="server" />
+        </div>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
