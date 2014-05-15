@@ -40,7 +40,7 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="reservation.aspx">Reservation</a></li>
                             <li><a href="loan.aspx">Loan Items</a></li>
-                            <li><a href="#">Entry Control</a></li>
+                            <li><a href="entry.aspx">Entry Control</a></li>
                             <li><a href="login.aspx">Login</a></li>
                         </ul>
                     </div>
