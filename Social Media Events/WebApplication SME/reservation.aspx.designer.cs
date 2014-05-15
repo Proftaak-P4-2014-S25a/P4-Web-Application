@@ -11,7 +11,7 @@ namespace WebApplication_SME
 {
 
 
-    public partial class reservation
+    public partial class Reservation
     {
 
         /// <summary>

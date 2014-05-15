@@ -11,7 +11,7 @@ namespace WebApplication_SME
 {
 
 
-    public partial class login
+    public partial class Login
     {
 
         /// <summary>
