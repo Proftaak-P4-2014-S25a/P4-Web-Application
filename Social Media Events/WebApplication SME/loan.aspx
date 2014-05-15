@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WebApplication_SME.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loan.aspx.cs" Inherits="WebApplication_SME.loan" %>
 
 <!DOCTYPE html>
 
@@ -39,7 +39,7 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li><a href="reservation.aspx">Reservation</a></li>
-                            <li><a href="loan.aspx">Loan Items</a></li>
+                            <li class="active"><a href="loan.aspx">Loan Items</a></li>
                             <li><a href="#">Entry Control</a></li>
                             <li><a href="login.aspx">Login</a></li>
                         </ul>
@@ -54,6 +54,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -33,13 +33,13 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Social Media Event</a>
+                        <a class="navbar-brand" href="index.aspx">Social Media Event</a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="index.aspx">Home</a></li>
-                            <li><a href="#">Reservation</a></li>
-                            <li><a href="#">Loan Items</a></li>
+                            <li><a href="reservation.aspx">Reservation</a></li>
+                            <li><a href="loan.aspx">Loan Items</a></li>
+                            <li><a href="#">Entry Control</a></li>
                             <li class="active"><a href="#">Login</a></li>
                         </ul>
                     </div>
@@ -48,5 +48,10 @@
             </div>
         </div>
     </form>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
