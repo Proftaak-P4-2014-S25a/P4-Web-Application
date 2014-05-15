@@ -39,7 +39,7 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#">Reservation</a></li>
+                            <li><a href="#">NIEKTEST</a></li>
                             <li><a href="#">Loan Items</a></li>
                             <li><a href="login.aspx">Login</a></li>
                         </ul>
