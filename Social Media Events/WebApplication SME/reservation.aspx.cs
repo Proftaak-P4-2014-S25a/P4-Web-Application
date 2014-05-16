@@ -18,5 +18,10 @@ namespace WebApplication_SME
                 this.btn_login.Text = "Logout";
             }
         }
+
+        protected void Submit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

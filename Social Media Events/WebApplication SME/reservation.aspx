@@ -18,6 +18,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+    <!-- Custom styles for this page -->
+    <link href="reservation.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -49,13 +51,80 @@
                 </div>
             </div>
             <div class="container">
-                <div class="form-register">
-                    <div class="row">
-                        <div class="col-md-4">First name</div>
-                        <div class="col-md-4 col-md-offset-1">
-                            <asp:TextBox CssClass="form-control" ID="FirstName" runat="server" required="required" placeholder="First name" />
-                        </div>
+                <!--Name -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Name</p>
                     </div>
+                    <div class="col-md-4">
+                        <asp:TextBox CssClass="form-control" ID="Name" type="text" runat="server" required="required" placeholder="John Doe" />
+                    </div>
+                </div>
+                <!--Street -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Street</p>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:TextBox CssClass="form-control" ID="Street" type="text" runat="server" required="required" placeholder="Koningsstraat" />
+                    </div>
+                </div>
+                <!--Postal-code -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Postal code</p>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:TextBox CssClass="form-control" ID="PostalCode" type="text" runat="server" required="required" placeholder="1234AB" />
+                    </div>
+                </div>
+                <!--City -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>City</p>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:TextBox CssClass="form-control" ID="City" type="text" runat="server" required="required" placeholder="Amsterdam" />
+                    </div>
+                </div>
+                <!--Telephone -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Phone number</p>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:TextBox CssClass="form-control" ID="Phone" type="tel" runat="server" required="required" placeholder="123-4567890" />
+                    </div>
+                </div>
+                <!--Email -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Email address</p>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:TextBox CssClass="form-control" ID="Email" type="email" runat="server" placeholder="example@gmail.com" />
+                    </div>
+                </div>
+                <!--Bank account number -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Bank account number</p>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:TextBox CssClass="form-control" ID="AccountNumber" type="number" runat="server" required="required" placeholder="123456789" />
+                    </div>
+                </div>
+                <!--Social Security Number -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Social Security Number</p>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:TextBox CssClass="form-control" ID="SSN" type="number" runat="server" required="required" placeholder="123456789" />
+                    </div>
+                </div>
+                <div class="form-register">
+                    <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="Sumbit" Text="Register" runat="server" OnClick="Submit_Click" />
                 </div>
             </div>
         </div>

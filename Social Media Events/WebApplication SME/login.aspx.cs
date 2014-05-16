@@ -22,7 +22,7 @@ namespace WebApplication_SME
             }
         }
 
-        protected void Sumbit_Click(object sender, EventArgs e)
+        protected void Submit_Click(object sender, EventArgs e)
         {
             if (!Request.IsAuthenticated)
             {

@@ -58,13 +58,13 @@ namespace WebApplication_SME {
         protected global::System.Web.UI.WebControls.CheckBox cb_remember;
         
         /// <summary>
-        /// btn_sumbit control.
+        /// Submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_sumbit;
+        protected global::System.Web.UI.WebControls.Button Submit;
         
         /// <summary>
         /// InvalidLogin control.
