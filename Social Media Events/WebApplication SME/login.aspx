@@ -19,7 +19,7 @@
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
     <!-- Custom styles for this page -->
-    <link href="login.css" rel="stylesheet">
+    <link href="login.css" rel="stylesheet"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -50,7 +50,7 @@
         <div class="container">
             <div class="form-signin">
                 <h2 class="form-signin-heading">Please sign in</h2>
-                <asp:TextBox CssClass="form-control" ID="tb_rfid" runat="server" placeholder="RFID" type="text" />
+                <asp:TextBox CssClass="form-control" ID="tb_rfid" runat="server" placeholder="RFID" type="text" required="required"/>
                 <asp:TextBox CssClass="form-control" ID="tb_pw" runat="server" type="password" placeholder="Password" required="required" />
                 <label class="checkbox">
                     <asp:CheckBox ID="cb_remember" runat="server" />

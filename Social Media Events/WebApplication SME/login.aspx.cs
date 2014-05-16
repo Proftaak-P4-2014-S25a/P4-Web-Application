@@ -30,9 +30,19 @@ namespace WebApplication_SME
         {
             if ((bool)this.Session["LoggedIn"] == false)
             {
-                FormsAuthentication.SetAuthCookie(this.tb_rfid.Text, true);
+                if(this.tb_rfid.Text == "300" && this.tb_pw.Text == "sparta")
+                {
+                    FormsAuthentication.RedirectFromLoginPage(this.tb_rfid.Text, this.cb_remember.Checked);
+                }
+                else
+                {
+                    
+                }
 
                 /*
+                 * FormsAuthentication.SetAuthCookie(this.tb_rfid.Text, true);
+                 * 
+                 * 
                 bool rememberMe = cb_remember.Checked;
                 int timeout = rememberMe ? 525600 : 30; // Timeout in minutes, 525600 = 365 days
                 var ticket = new FormsAuthenticationTicket(tb_rfid.Text, rememberMe, timeout);
