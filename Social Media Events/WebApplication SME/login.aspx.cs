@@ -14,21 +14,17 @@ namespace WebApplication_SME
         private DatabaseMngr mngr = new DatabaseMngr();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (this.Session["LoggedIn"] == null)
-            {
-                this.Session.Add("LoggedIn", false);
-            }
-            if ((bool)this.Session["LoggedIn"] == true)
+            if (Request.IsAuthenticated)
             {
                 this.btn_login.Text = "Logout";
-                this.Session["LoggedIn"] = false;
+                FormsAuthentication.SignOut();
                 Response.Redirect("index.aspx");
             }
         }
 
         protected void Sumbit_Click(object sender, EventArgs e)
         {
-            if ((bool)this.Session["LoggedIn"] == false)
+            if (!Request.IsAuthenticated)
             {
                 if(this.tb_rfid.Text == "300" && this.tb_pw.Text == "sparta")
                 {
@@ -38,23 +34,6 @@ namespace WebApplication_SME
                 {
                     
                 }
-
-                /*
-                 * FormsAuthentication.SetAuthCookie(this.tb_rfid.Text, true);
-                 * 
-                 * 
-                bool rememberMe = cb_remember.Checked;
-                int timeout = rememberMe ? 525600 : 30; // Timeout in minutes, 525600 = 365 days
-                var ticket = new FormsAuthenticationTicket(tb_rfid.Text, rememberMe, timeout);
-                string encrypted = FormsAuthentication.Encrypt(ticket);
-                var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted);
-                cookie.Expires = System.DateTime.Now.AddMinutes(timeout);
-                cookie.HttpOnly = true;
-                Response.Cookies.Add(cookie);
-                 */
-
-                this.Session["LoggedIn"] = true;
-                Response.Redirect("index.aspx");
             }
         }
     }

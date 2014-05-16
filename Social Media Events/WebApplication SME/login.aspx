@@ -58,6 +58,11 @@
                 </label>
                 <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="btn_sumbit" Text="Sign in" runat="server" OnClick="Sumbit_Click" />
             </div>
+            <div class="form-signin">
+                <asp:Panel CssClass="form-control alert alert-danger" ID="InvalidLogin" runat="server">
+                    <asp:Label ID="InvalidLoginText" runat="server" Text="Error"></asp:Label>
+                </asp:Panel>
+            </div>
         </div>
     </form>
     <!-- Bootstrap core JavaScript
