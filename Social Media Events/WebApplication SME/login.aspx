@@ -60,7 +60,7 @@
             </div>
             <div class="form-signin">
                 <asp:Panel CssClass="form-control alert alert-danger" ID="InvalidLogin" runat="server">
-                    <asp:Label ID="InvalidLoginText" runat="server" Text="Error"></asp:Label>
+                    <asp:Label ID="InvalidLoginText" runat="server" Text="Error"/>
                 </asp:Panel>
             </div>
         </div>
