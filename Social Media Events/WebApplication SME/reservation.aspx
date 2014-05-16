@@ -42,13 +42,22 @@
                             <li><a href="loan.aspx">Loan Items</a></li>
                             <li><a href="entry.aspx">Entry Control</a></li>
                             <li>
-                                <asp:HyperLink href="login.aspx" ID="btn_login" runat="server">Login</asp:HyperLink></li>
+                                <asp:HyperLink ID="btn_login" runat="server" NavigateUrl="login.aspx">Login</asp:HyperLink></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
                 </div>
             </div>
-
+            <div class="container">
+                <div class="form-register">
+                    <div class="row">
+                        <div class="col-md-4">First name</div>
+                        <div class="col-md-4 col-md-offset-1">
+                            <asp:TextBox CssClass="form-control" ID="FirstName" runat="server" required="required" placeholder="First name" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
     <!-- Bootstrap core JavaScript
