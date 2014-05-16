@@ -11,27 +11,27 @@ namespace WebApplication_SME
 {
     public partial class Login : System.Web.UI.Page
     {
-        DatabaseMngr mngr = new DatabaseMngr();
+        private DatabaseMngr mngr = new DatabaseMngr();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["LoggedIn"] == null)
+            if (this.Session["LoggedIn"] == null)
             {
-                Session.Add("LoggedIn", false);
+                this.Session.Add("LoggedIn", false);
             }
-            if ((bool)Session["LoggedIn"] == true)
+            if ((bool)this.Session["LoggedIn"] == true)
             {
-                btn_login.Text = "Logout";
-                Session["LoggedIn"] = false;
+                this.btn_login.Text = "Logout";
+                this.Session["LoggedIn"] = false;
                 Response.Redirect("index.aspx");
             }
         }
 
-        protected void sumbit_Click(object sender, EventArgs e)
+        protected void Sumbit_Click(object sender, EventArgs e)
         {
-            if ((bool)Session["LoggedIn"] == false)
+            if ((bool)this.Session["LoggedIn"] == false)
             {
-                FormsAuthentication.SetAuthCookie(tb_rfid.Text, true);
-                FormsAuthentication.s
+                FormsAuthentication.SetAuthCookie(this.tb_rfid.Text, true);
+
                 /*
                 bool rememberMe = cb_remember.Checked;
                 int timeout = rememberMe ? 525600 : 30; // Timeout in minutes, 525600 = 365 days
@@ -43,7 +43,7 @@ namespace WebApplication_SME
                 Response.Cookies.Add(cookie);
                  */
 
-                Session["LoggedIn"] = true;
+                this.Session["LoggedIn"] = true;
                 Response.Redirect("index.aspx");
             }
         }

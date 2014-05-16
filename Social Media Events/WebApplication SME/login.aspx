@@ -56,7 +56,7 @@
                     <asp:CheckBox ID="cb_remember" runat="server" />
                     Remember me
                 </label>
-                <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="btn_sumbit" Text="Sign in" runat="server" OnClick="sumbit_Click" />
+                <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="btn_sumbit" Text="Sign in" runat="server" OnClick="Sumbit_Click" />
             </div>
         </div>
     </form>
