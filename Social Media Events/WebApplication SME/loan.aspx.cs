@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace WebApplication_SME
 {
@@ -12,11 +13,7 @@ namespace WebApplication_SME
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (this.Session["LoggedIn"] == null)
-            {
-                this.Session.Add("LoggedIn", false);
-            }
-            if ((bool)this.Session["LoggedIn"] == true)
+            if (Request.IsAuthenticated)
             {
                 this.btn_login.Text = "Logout";
             }

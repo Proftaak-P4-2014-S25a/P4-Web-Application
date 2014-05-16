@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -79,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseMngr.cs" />
+    <Compile Include="DirectoryAuthorization.cs" />
     <Compile Include="entry.aspx.cs">
       <DependentUpon>entry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

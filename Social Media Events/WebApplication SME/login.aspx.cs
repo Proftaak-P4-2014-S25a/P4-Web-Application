@@ -32,7 +32,7 @@ namespace WebApplication_SME
                 }
                 else
                 {
-                    
+                    this.InvalidLogin.Visible = true;
                 }
             }
         }
