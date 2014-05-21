@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Class for logging in with Active Directory accounts
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;

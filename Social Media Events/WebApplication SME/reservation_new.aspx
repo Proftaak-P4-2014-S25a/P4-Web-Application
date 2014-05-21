@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="reservation.aspx.cs" Inherits="WebApplication_SME.Reservation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="reservation_new.aspx.cs" Inherits="WebApplication_SME.Reservation" %>
 
 <!DOCTYPE html>
 
@@ -19,7 +19,7 @@
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
     <!-- Custom styles for this page -->
-    <link href="reservation.css" rel="stylesheet" />
+    <link href="reservation_new.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -40,17 +40,19 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="reservation.aspx">Reservation</a></li>
+                            <li class="active"><a href="reservation_new.aspx">Reservation</a></li>
                             <li><a href="loan.aspx">Loan Items</a></li>
                             <li><a href="entry.aspx">Entry Control</a></li>
                             <li>
-                                <asp:HyperLink ID="btn_login" runat="server" NavigateUrl="login.aspx">Login</asp:HyperLink></li>
+                                <asp:HyperLink ID="Login" runat="server" NavigateUrl="login.aspx">Login</asp:HyperLink></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
                 </div>
             </div>
             <div class="container">
+                <h1>Just a few steps.</h1>
+                <p>Please fill in this form to register.</p>
                 <!--Name -->
                 <div class="row">
                     <div class="col-md-3">
@@ -102,7 +104,7 @@
                         <p>Email address</p>
                     </div>
                     <div class="col-md-4">
-                        <asp:TextBox CssClass="form-control" ID="Email" type="email" runat="server" placeholder="example@gmail.com" />
+                        <asp:TextBox CssClass="form-control" ID="Email" type="email" runat="server" required="required" placeholder="example@gmail.com" />
                     </div>
                 </div>
                 <!--Bank account number -->

@@ -39,11 +39,11 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="reservation.aspx">Reservation</a></li>
+                            <li><a href="reservation_new.aspx">Reservation</a></li>
                             <li><a href="loan.aspx">Loan Items</a></li>
                             <li class="active"><a href="entry.aspx">Entry Control</a></li>
                             <li>
-                                <asp:HyperLink href="login.aspx" ID="btn_login" runat="server">Login</asp:HyperLink></li>
+                                <asp:HyperLink href="login.aspx" ID="LoginMenu" runat="server">Login</asp:HyperLink></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->

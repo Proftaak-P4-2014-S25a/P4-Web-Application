@@ -22,13 +22,13 @@ namespace WebApplication_SME {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btn_login control.
+        /// LoginMenu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink btn_login;
+        protected global::System.Web.UI.WebControls.HyperLink LoginMenu;
         
         /// <summary>
         /// tb_rfid control.

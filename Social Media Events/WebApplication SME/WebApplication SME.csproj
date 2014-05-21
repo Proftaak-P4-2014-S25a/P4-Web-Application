@@ -74,8 +74,8 @@
     <Content Include="loan.css" />
     <Content Include="login.aspx" />
     <Content Include="login.css" />
-    <Content Include="reservation.aspx" />
-    <Content Include="reservation.css" />
+    <Content Include="reservation_new.aspx" />
+    <Content Include="reservation_new.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -112,12 +112,12 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="reservation.aspx.cs">
-      <DependentUpon>reservation.aspx</DependentUpon>
+    <Compile Include="reservation_new.aspx.cs">
+      <DependentUpon>reservation_new.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="reservation.aspx.designer.cs">
-      <DependentUpon>reservation.aspx</DependentUpon>
+    <Compile Include="reservation_new.aspx.designer.cs">
+      <DependentUpon>reservation_new.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
