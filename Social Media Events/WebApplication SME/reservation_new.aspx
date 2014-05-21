@@ -68,7 +68,7 @@
                         <p>Street</p>
                     </div>
                     <div class="col-md-4">
-                        <asp:TextBox CssClass="form-control" ID="Street" type="text" runat="server" required="required" placeholder="Koningsstraat" />
+                        <asp:TextBox CssClass="form-control" ID="Street" type="text" runat="server" required="required" placeholder="Koningsstraat 9" />
                     </div>
                 </div>
                 <!--Postal-code -->
@@ -126,7 +126,7 @@
                     </div>
                 </div>
                 <div class="form-register">
-                    <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="Sumbit" Text="Register" runat="server" OnClick="Submit_Click" />
+                    <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="Submit" Text="Register" runat="server" OnClick="Submit_Click" />
                 </div>
             </div>
         </div>

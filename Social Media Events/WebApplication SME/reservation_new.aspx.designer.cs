@@ -103,12 +103,12 @@ namespace WebApplication_SME {
         protected global::System.Web.UI.WebControls.TextBox SSN;
         
         /// <summary>
-        /// Sumbit control.
+        /// Submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Sumbit;
+        protected global::System.Web.UI.WebControls.Button Submit;
     }
 }

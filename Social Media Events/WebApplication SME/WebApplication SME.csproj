@@ -74,6 +74,7 @@
     <Content Include="loan.css" />
     <Content Include="login.aspx" />
     <Content Include="login.css" />
+    <Content Include="Mailpage.html" />
     <Content Include="reservation_new.aspx" />
     <Content Include="reservation_new.css" />
     <Content Include="Web.config" />
