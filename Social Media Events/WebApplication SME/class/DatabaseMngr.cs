@@ -17,5 +17,15 @@ namespace WebApplication_SME
         {
             return true;
         }
+
+        public int GetMaxRFID()
+        {
+            return 301;
+        }
+
+        public string GetUser(int RFID)
+        {
+            return "TEST";
+        }
     }
 }

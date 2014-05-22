@@ -54,7 +54,7 @@ namespace WebApplication_SME
                 "Bank account number: " + AccountNumber.Text + System.Environment.NewLine +
                 "Social Security Number: " + SSN.Text + System.Environment.NewLine + System.Environment.NewLine +
                 "If this data is correct, please validate your account by visiting this page: " + System.Environment.NewLine +
-                "";
+                "http://localhost:1515/Validation.aspx?user=" + dbmngr.GetMaxRFID().ToString();
 
             //Won't work yet
             //smtpClient.Send(mail);
