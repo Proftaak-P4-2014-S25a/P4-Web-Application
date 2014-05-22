@@ -66,59 +66,67 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="entry.aspx" />
-    <Content Include="entry.css" />
-    <Content Include="index.aspx" />
-    <Content Include="index.css" />
-    <Content Include="loan.aspx" />
-    <Content Include="loan.css" />
-    <Content Include="login.aspx" />
-    <Content Include="login.css" />
-    <Content Include="Mailpage.html" />
-    <Content Include="reservation_new.aspx" />
-    <Content Include="reservation_new.css" />
+    <Content Include="Entry.aspx" />
+    <Content Include="Entry.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Default.css" />
+    <Content Include="Loan.aspx" />
+    <Content Include="Loan.css" />
+    <Content Include="Login.aspx" />
+    <Content Include="Login.css" />
+    <Content Include="Reservation_new.aspx" />
+    <Content Include="Reservation_new.css" />
+    <Content Include="Validate.aspx" />
+    <Content Include="Validate.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="class\DatabaseMngr.cs" />
     <Compile Include="class\DirectoryAuthorization.cs" />
-    <Compile Include="entry.aspx.cs">
-      <DependentUpon>entry.aspx</DependentUpon>
+    <Compile Include="Entry.aspx.cs">
+      <DependentUpon>Entry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="entry.aspx.designer.cs">
-      <DependentUpon>entry.aspx</DependentUpon>
+    <Compile Include="Entry.aspx.designer.cs">
+      <DependentUpon>Entry.aspx</DependentUpon>
     </Compile>
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="loan.aspx.cs">
-      <DependentUpon>loan.aspx</DependentUpon>
+    <Compile Include="Loan.aspx.cs">
+      <DependentUpon>Loan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="loan.aspx.designer.cs">
-      <DependentUpon>loan.aspx</DependentUpon>
+    <Compile Include="Loan.aspx.designer.cs">
+      <DependentUpon>Loan.aspx</DependentUpon>
     </Compile>
-    <Compile Include="login.aspx.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="login.aspx.designer.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="reservation_new.aspx.cs">
-      <DependentUpon>reservation_new.aspx</DependentUpon>
+    <Compile Include="Reservation_new.aspx.cs">
+      <DependentUpon>Reservation_new.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="reservation_new.aspx.designer.cs">
-      <DependentUpon>reservation_new.aspx</DependentUpon>
+    <Compile Include="Reservation_new.aspx.designer.cs">
+      <DependentUpon>Reservation_new.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Validate.aspx.cs">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Validate.aspx.designer.cs">
+      <DependentUpon>Validate.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

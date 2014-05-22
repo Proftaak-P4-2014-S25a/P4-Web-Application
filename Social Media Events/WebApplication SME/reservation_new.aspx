@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="reservation_new.aspx.cs" Inherits="WebApplication_SME.Reservation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Reservation_new.aspx.cs" Inherits="WebApplication_SME.Reservation" %>
 
 <!DOCTYPE html>
 
@@ -19,13 +19,12 @@
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
     <!-- Custom styles for this page -->
-    <link href="reservation_new.css" rel="stylesheet" />
+    <link href="Reservation_new.css" rel="stylesheet" />
 
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-
             <!-- Fixed navbar -->
             <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="container">
@@ -36,15 +35,15 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.aspx">Social Media Event</a>
+                        <a class="navbar-brand" href="Index.aspx">Social Media Event</a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="reservation_new.aspx">Reservation</a></li>
-                            <li><a href="loan.aspx">Loan Items</a></li>
-                            <li><a href="entry.aspx">Entry Control</a></li>
+                            <li class="active"><a href="Reservation_new.aspx">Reservation</a></li>
+                            <li><a href="Loan.aspx">Loan Items</a></li>
+                            <li><a href="Entry.aspx">Entry Control</a></li>
                             <li>
-                                <asp:HyperLink ID="Login" runat="server" NavigateUrl="login.aspx">Login</asp:HyperLink></li>
+                                <asp:HyperLink ID="Login" runat="server" NavigateUrl="Login.aspx">Login</asp:HyperLink></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->

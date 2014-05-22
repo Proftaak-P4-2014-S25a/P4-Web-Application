@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WebApplication_SME.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApplication_SME.Index" %>
 
 <!DOCTYPE html>
 
@@ -19,7 +19,7 @@
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
     <!-- Custom styles for this page -->
-    <link href="index.css" rel="stylesheet" />
+    <link href="Default.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -34,15 +34,15 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.aspx">Social Media Event</a>
+                        <a class="navbar-brand" href="Index.aspx">Social Media Event</a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="reservation_new.aspx">Reservation</a></li>
-                            <li><a href="loan.aspx">Loan Items</a></li>
-                            <li><a href="entry.aspx">Entry Control</a></li>
+                            <li><a href="Reservation_new.aspx">Reservation</a></li>
+                            <li><a href="Loan.aspx">Loan Items</a></li>
+                            <li><a href="Entry.aspx">Entry Control</a></li>
                             <li>
-                                <asp:HyperLink href="login.aspx" ID="LoginMenu" runat="server">Login</asp:HyperLink></li>
+                                <asp:HyperLink href="Login.aspx" ID="LoginMenu" runat="server">Login</asp:HyperLink></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->

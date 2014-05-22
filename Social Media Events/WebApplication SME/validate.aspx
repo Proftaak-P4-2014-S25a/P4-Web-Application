@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Entry.aspx.cs" Inherits="WebApplication_SME.Entry" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Validate.aspx.cs" Inherits="WebApplication_SME.validate" %>
 
 <!DOCTYPE html>
 
@@ -19,12 +19,11 @@
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
     <!-- Custom styles for this page -->
-    <link href="Entry.css" rel="stylesheet" />
+    <link href="Validate.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-
             <!-- Fixed navbar -->
             <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="container">
@@ -41,21 +40,18 @@
                         <ul class="nav navbar-nav">
                             <li><a href="Reservation_new.aspx">Reservation</a></li>
                             <li><a href="Loan.aspx">Loan Items</a></li>
-                            <li class="active"><a href="Entry.aspx">Entry Control</a></li>
+                            <li><a href="Entry.aspx">Entry Control</a></li>
                             <li>
-                                <asp:HyperLink href="Login.aspx" ID="LoginMenu" runat="server">Login</asp:HyperLink></li>
+                                <asp:HyperLink ID="Login" runat="server" NavigateUrl="Login.aspx">Login</asp:HyperLink></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
                 </div>
             </div>
-
+            <div class="container">
+                <h1>Email validated.</h1>
+            </div>
         </div>
     </form>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
