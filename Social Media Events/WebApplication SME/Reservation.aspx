@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Reservation_new.aspx.cs" Inherits="WebApplication_SME.Reservation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Reservation.aspx.cs" Inherits="WebApplication_SME.Reservation1" %>
 
 <!DOCTYPE html>
 
@@ -19,7 +19,7 @@
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
     <!-- Custom styles for this page -->
-    <link href="Reservation_new.css" rel="stylesheet" />
+    <link href="Reservation.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -124,6 +124,27 @@
                         <asp:TextBox CssClass="form-control" ID="SSN" type="number" runat="server" required="required" placeholder="123456789" />
                     </div>
                 </div>
+                <!--Campingplace -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Campingplace</p>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:TextBox CssClass="form-control" ID="TextBox2" type="number" runat="server" required="required" placeholder="123456789" />
+                    </div>
+                </div>
+                <!--Number of members attending -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Number of members attending</p>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:TextBox CssClass="form-control" ID="TextBox1" type="number" runat="server" required="required" placeholder="123456789" />
+                    </div>
+                </div>
+
+
+
                 <div class="form-register">
                     <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="Submit" Text="Register" runat="server" OnClick="Submit_Click" />
                 </div>
