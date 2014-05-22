@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Reservation_new.aspx.cs" Inherits="WebApplication_SME.Reservation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="WebApplication_SME.Reservation" %>
 
 <!DOCTYPE html>
 
@@ -19,7 +19,7 @@
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
     <!-- Custom styles for this page -->
-    <link href="Reservation_new.css" rel="stylesheet" />
+    <link href="Registration.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="Reservation_new.aspx">Reservation</a></li>
+                            <li class="active"><a href="Registration.aspx">Registration</a></li>
                             <li><a href="Loan.aspx">Loan Items</a></li>
                             <li><a href="Entry.aspx">Entry Control</a></li>
                             <li>
