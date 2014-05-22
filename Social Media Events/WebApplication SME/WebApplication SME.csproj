@@ -74,8 +74,8 @@
     <Content Include="Loan.css" />
     <Content Include="Login.aspx" />
     <Content Include="Login.css" />
-    <Content Include="Reservation_new.aspx" />
-    <Content Include="Reservation_new.css" />
+    <Content Include="Registration.aspx" />
+    <Content Include="Registration.css" />
     <Content Include="Validate.aspx" />
     <Content Include="Validate.css" />
     <Content Include="Web.config" />
@@ -114,12 +114,12 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Reservation_new.aspx.cs">
-      <DependentUpon>Reservation_new.aspx</DependentUpon>
+    <Compile Include="Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Reservation_new.aspx.designer.cs">
-      <DependentUpon>Reservation_new.aspx</DependentUpon>
+    <Compile Include="Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Validate.aspx.cs">
       <DependentUpon>Validate.aspx</DependentUpon>
