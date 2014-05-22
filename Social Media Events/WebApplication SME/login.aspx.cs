@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
+using System.Web.Configuration;
+using System.Configuration;
 
 namespace WebApplication_SME
 {
@@ -18,7 +20,7 @@ namespace WebApplication_SME
             {
                 LoginMenu.Text = "Logout";
                 FormsAuthentication.SignOut();
-                Response.Redirect("index.aspx");
+                Response.Redirect(FormsAuthentication.DefaultUrl);
             }
         }
 
