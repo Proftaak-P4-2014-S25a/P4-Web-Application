@@ -78,8 +78,8 @@
     <Content Include="Registration.css" />
     <Content Include="Reservation.aspx" />
     <Content Include="Reservation.css" />
-    <Content Include="Validate.aspx" />
-    <Content Include="Validate.css" />
+    <Content Include="Validation.aspx" />
+    <Content Include="Validation.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -129,12 +129,12 @@
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Validate.aspx.cs">
-      <DependentUpon>Validate.aspx</DependentUpon>
+    <Compile Include="Validation.aspx.cs">
+      <DependentUpon>Validation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Validate.aspx.designer.cs">
-      <DependentUpon>Validate.aspx</DependentUpon>
+    <Compile Include="Validation.aspx.designer.cs">
+      <DependentUpon>Validation.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
