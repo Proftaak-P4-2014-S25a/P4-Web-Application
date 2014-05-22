@@ -19,7 +19,7 @@
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
     <!-- Custom styles for this page -->
-    <link href="Validate.css" rel="stylesheet" />
+    <link href="Validation.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -49,7 +49,30 @@
                 </div>
             </div>
             <div class="container">
-                <h1>Email validated.</h1>
+                <h1 class="form-register-heading" style="color:green;">Email validated.</h1>
+                <h2 class="form-register-heading">Please choose your campsite</h2>
+                <!--Campsite -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Campsite</p>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:TextBox CssClass="form-control" ID="TextBox2" type="number" runat="server" required="required" placeholder="123456789" />
+                    </div>
+                </div>
+                <!--Number of members attending -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Number of members attending</p>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:TextBox CssClass="form-control" ID="TextBox1" type="number" runat="server" required="required" placeholder="123456789" />
+                    </div>
+                </div>
+                <div class="form-register">
+                    <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="Submit" Text="Submit" runat="server" OnClick="Submit_Click" />
+                </div>
+                <asp:Label runat="server" ID="EmailSent" style="margin-top:50px; font-size:16px;" Text="An email with login details has been sent to: "/>
             </div>
         </div>
     </form>
