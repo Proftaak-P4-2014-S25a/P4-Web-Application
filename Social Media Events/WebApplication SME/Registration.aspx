@@ -19,7 +19,7 @@
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
     <!-- Custom styles for this page -->
-    <link href="Reservation_new.css" rel="stylesheet" />
+    <link href="Registration.css" rel="stylesheet" />
 
 </head>
 <body>
