@@ -74,6 +74,8 @@
     <Content Include="Loan.css" />
     <Content Include="Login.aspx" />
     <Content Include="Login.css" />
+    <Content Include="Reservation.aspx" />
+    <Content Include="Reservation.css" />
     <Content Include="Reservation_new.aspx" />
     <Content Include="Reservation_new.css" />
     <Content Include="Validate.aspx" />
@@ -113,6 +115,13 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Reservation.aspx.cs">
+      <DependentUpon>Reservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reservation.aspx.designer.cs">
+      <DependentUpon>Reservation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reservation_new.aspx.cs">
       <DependentUpon>Reservation_new.aspx</DependentUpon>
