@@ -120,6 +120,7 @@
     </Compile>
     <Compile Include="Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reservation.aspx.cs">
       <DependentUpon>Reservation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
