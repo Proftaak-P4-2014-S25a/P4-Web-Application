@@ -24,14 +24,14 @@ namespace WebApplication_SME
 
         protected void Submit_Click(object sender, EventArgs e)
         {
+            //*************** TODO ************************
             //**** Send data to database ****//
             DatabaseMngr dbmngr = new DatabaseMngr();
 
-            //*************** TODO ************************
+            
 
+            //*************** TODO ************************
             //Send email to new user
-
-            //*************** TODO ************************
 
             SmtpClient smtpClient = new SmtpClient("serveradress", 587);
             smtpClient.Credentials = new System.Net.NetworkCredential("email@test.com", "password");

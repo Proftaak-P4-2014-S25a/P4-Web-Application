@@ -130,7 +130,7 @@
                         <p>Campingplace</p>
                     </div>
                     <div class="col-md-4">
-                        <asp:TextBox CssClass="form-control" ID="TextBox2" type="number" runat="server" required="required" placeholder="123456789" />
+                        <asp:TextBox CssClass="form-control" ID="TextBox2" type="number" runat="server" required="required" />
                     </div>
                 </div>
                 <!--Number of members attending -->
@@ -139,14 +139,11 @@
                         <p>Number of members attending</p>
                     </div>
                     <div class="col-md-4">
-                        <asp:TextBox CssClass="form-control" ID="TextBox1" type="number" runat="server" required="required" placeholder="123456789" />
+                        <asp:DropDownList CssClass="form-control" ID="DropDownList1" type="number" runat="server" required="required" />
                     </div>
                 </div>
-
-
-
                 <div class="form-register">
-                    <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="Submit" Text="Register" runat="server" OnClick="Submit_Click" />
+                    <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="Change" Text="Save Changes" runat="server" OnClick="Change_Click" />
                 </div>
             </div>
         </div>
