@@ -21,7 +21,6 @@ namespace WebApplication_SME
                 LoginMenu.Text = "Logout";
                 FormsAuthentication.SignOut();
                 Response.Redirect(FormsAuthentication.DefaultUrl);
-                JAJAJAJAJAJ the realest;
             }
         }
 
