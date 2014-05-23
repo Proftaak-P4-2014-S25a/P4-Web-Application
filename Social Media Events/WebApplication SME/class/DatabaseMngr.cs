@@ -25,6 +25,10 @@ namespace WebApplication_SME
 
         public string GetUser(int RFID)
         {
+            if(RFID == 300)
+            {
+                return "Spartacus";
+            }
             return "TEST";
         }
     }
