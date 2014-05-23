@@ -42,5 +42,12 @@ namespace WebApplication_SME
                 }
             }
         }
+
+
+        protected void Gerard()
+        { if (Gerard=moe)
+        Gerard.slaap()}
+
+
     }
 }
