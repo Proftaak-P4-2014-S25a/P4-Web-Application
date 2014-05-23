@@ -42,10 +42,5 @@ namespace WebApplication_SME
                 }
             }
         }
-        protected void WillySchouten
-        {
-            if(WillySchouten=moe)
-            WillySchouten.slaap();
-        }
     }
 }
