@@ -25,6 +25,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <!-- Demo informatie --> 
             <!-- Fixed navbar -->
             <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="container">
