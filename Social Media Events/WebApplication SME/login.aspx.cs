@@ -38,5 +38,9 @@ namespace WebApplication_SME
                 }
             }
         }
+
+        protected void ShowWilly()
+        {
+        }
     }
 }
