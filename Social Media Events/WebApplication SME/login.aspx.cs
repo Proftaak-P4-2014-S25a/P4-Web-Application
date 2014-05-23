@@ -24,14 +24,6 @@ namespace WebApplication_SME
             }
         }
 
-        protected void ShowWilly()
-        {
-            foreach (willy w in willies)
-            {
-                willys.Add(w);
-            }
-        }
-
         protected void Submit_Click(object sender, EventArgs e)
         {
             if (!Request.IsAuthenticated)
@@ -46,12 +38,5 @@ namespace WebApplication_SME
                 }
             }
         }
-
-
-        protected void Gerard()
-        { if (Gerard=moe)
-        Gerard.slaap()}
-
-
     }
 }
