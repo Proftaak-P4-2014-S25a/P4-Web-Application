@@ -60,5 +60,9 @@ namespace WebApplication_SME
             //smtpClient.Send(mail);
             Response.Redirect("index.aspx");
         }
+        protected void Kaas()
+        {
+            blabalbla;
+        }
     }
 }
