@@ -24,6 +24,10 @@ namespace WebApplication_SME
             }
         }
 
+        protected void ShowWilly()
+        {
+        }
+
         protected void Submit_Click(object sender, EventArgs e)
         {
             if (!Request.IsAuthenticated)
@@ -37,10 +41,6 @@ namespace WebApplication_SME
                     this.InvalidLogin.Visible = true;
                 }
             }
-        }
-
-        protected void ShowWilly()
-        {
         }
     }
 }
