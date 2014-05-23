@@ -18,7 +18,7 @@ namespace WebApplication_SME
         {
             if (Request.IsAuthenticated)
             {
-                LoginMenu.Text = "THE REALEST";
+                LoginMenu.Text = "Logout";
                 FormsAuthentication.SignOut();
                 Response.Redirect(FormsAuthentication.DefaultUrl);
             }
