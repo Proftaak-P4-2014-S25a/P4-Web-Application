@@ -85,6 +85,7 @@
   <ItemGroup>
     <Compile Include="class\Bestand.cs" />
     <Compile Include="class\Comment.cs" />
+    <Compile Include="class\Campingspot.cs" />
     <Compile Include="class\DatabaseMngr.cs" />
     <Compile Include="class\DirectoryAuthorization.cs" />
     <Compile Include="class\Klant.cs" />
