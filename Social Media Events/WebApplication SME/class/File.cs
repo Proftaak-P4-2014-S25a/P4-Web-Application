@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebApplication_SME
 {
-	public class Bestand
+	public class File
 	{
         public string Name { get; set; }
         public string Description { get; set; }
@@ -19,7 +19,7 @@ namespace WebApplication_SME
         public int ImgIndex { get; set; }
         public List<Comment> Comments { get; set; }
 
-        public Bestand(string name,string description,string extension,int size,int rfid,DateTime date,int downloaded,int rating,string path,int imgindex)
+        public File(string name,string description,string extension,int size,int rfid,DateTime date,int downloaded,int rating,string path,int imgindex)
         {
             this.Name = name;
             this.Description = description;
