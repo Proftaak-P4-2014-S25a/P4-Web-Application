@@ -48,6 +48,77 @@
         <div id="label" class="container ">
             <asp:Label ID="label1" runat="server" />
         </div>
+        <br />
+    <br />
+    <br />
+    <br />
+        <p class="lead">
+            <asp:ListBox ID="lbox_Rentables" runat="server">
+                <asp:ListItem>TestItem01</asp:ListItem>
+                <asp:ListItem>TestItem02</asp:ListItem>
+            </asp:ListBox>
+&nbsp;
+            <asp:Button ID="btn_AddItem" runat="server" Text="Toevoegen" />
+        </p>
+        <p class="lead">
+            <asp:TextBox ID="txt_Chosen1" runat="server" ReadOnly="True"></asp:TextBox>
+&nbsp;
+            <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:ListItem Value="1"></asp:ListItem>
+                <asp:ListItem Value="2"></asp:ListItem>
+                <asp:ListItem Value="3"></asp:ListItem>
+                <asp:ListItem Value="4"></asp:ListItem>
+                <asp:ListItem Value="5"></asp:ListItem>
+            </asp:DropDownList>
+        </p>
+        <p class="lead">
+            <asp:TextBox ID="txt_Chosen2" runat="server" ReadOnly="True"></asp:TextBox>
+&nbsp;
+            <asp:DropDownList ID="DropDownList2" runat="server">
+                <asp:ListItem Value="1"></asp:ListItem>
+                <asp:ListItem Value="2"></asp:ListItem>
+                <asp:ListItem Value="3"></asp:ListItem>
+                <asp:ListItem Value="4"></asp:ListItem>
+                <asp:ListItem Value="5"></asp:ListItem>
+            </asp:DropDownList>
+        </p>
+        <p class="lead">
+            <asp:TextBox ID="txt_Chosen3" runat="server" ReadOnly="True"></asp:TextBox>
+&nbsp;
+            <asp:DropDownList ID="DropDownList3" runat="server">
+                <asp:ListItem Value="1"></asp:ListItem>
+                <asp:ListItem Value="2"></asp:ListItem>
+                <asp:ListItem Value="3"></asp:ListItem>
+                <asp:ListItem Value="4"></asp:ListItem>
+                <asp:ListItem Value="5"></asp:ListItem>
+            </asp:DropDownList>
+        </p>
+        <p class="lead">
+            <asp:TextBox ID="txt_Chosen4" runat="server" ReadOnly="True"></asp:TextBox>
+&nbsp;
+            <asp:DropDownList ID="DropDownList4" runat="server">
+                <asp:ListItem Value="1"></asp:ListItem>
+                <asp:ListItem Value="2"></asp:ListItem>
+                <asp:ListItem Value="3"></asp:ListItem>
+                <asp:ListItem Value="4"></asp:ListItem>
+                <asp:ListItem Value="5"></asp:ListItem>
+            </asp:DropDownList>
+        </p>
+        <p class="lead">
+            <asp:TextBox ID="txt_Chosen5" runat="server" ReadOnly="True"></asp:TextBox>
+&nbsp;
+            <asp:DropDownList ID="DropDownList5" runat="server">
+                <asp:ListItem Value="1"></asp:ListItem>
+                <asp:ListItem Value="2"></asp:ListItem>
+                <asp:ListItem Value="3"></asp:ListItem>
+                <asp:ListItem Value="4"></asp:ListItem>
+                <asp:ListItem Value="5"></asp:ListItem>
+            </asp:DropDownList>
+        </p>
+        <p class="lead">
+            <asp:Button ID="btn_Finish" runat="server" Text="Voltooien" />
+        </p>
+
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

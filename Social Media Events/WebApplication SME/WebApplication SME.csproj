@@ -85,6 +85,10 @@
   <ItemGroup>
     <Compile Include="class\DatabaseMngr.cs" />
     <Compile Include="class\DirectoryAuthorization.cs" />
+    <Compile Include="class\Klant.cs" />
+    <Compile Include="class\KlantBetalend.cs" />
+    <Compile Include="class\Medewerker.cs" />
+    <Compile Include="class\Persoon.cs" />
     <Compile Include="Entry.aspx.cs">
       <DependentUpon>Entry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
