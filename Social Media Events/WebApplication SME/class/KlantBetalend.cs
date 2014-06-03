@@ -6,7 +6,8 @@ using System.Web;
 namespace WebApplication_SME
 {
 	public class KlantBetalend:Persoon
-	{
+    {
+        #region Properties
         public string Name { get; set; }
         public string Street { get; set; }
         public string Postalcode { get; set; }
@@ -16,7 +17,9 @@ namespace WebApplication_SME
         public int Bankaccount { get; set; }
         public string Sofinummer { get; set; }
         public int ReservationNumber { get; set; }
+        #endregion
 
+        #region Constructor
         public KlantBetalend(int rfid, string password, string name, string street, string postalcode, string city, string phonenumber, string email, int bankaccount, string sofinummer, int reservationnumber)
             : base(rfid, password)
         {
@@ -30,6 +33,9 @@ namespace WebApplication_SME
             this.Sofinummer = sofinummer;
             this.ReservationNumber = reservationnumber;
         }
+        #endregion
+
+        #region Methods
 
         public override string ToString()
         {
@@ -45,5 +51,6 @@ namespace WebApplication_SME
 
 
         }
-	}
+        #endregion
+    }
 }

@@ -7,12 +7,15 @@ namespace WebApplication_SME
 {
     public class Campingspot
     {
+        #region Fields
         private int placenumber;
         private int coordinateX;
         private int coordinateY;
         private double price;
         private string comment;
+        #endregion
 
+        #region Properties
         public int Placenumber
         {
             get;
@@ -42,7 +45,9 @@ namespace WebApplication_SME
             get;
             set;
         }
+        #endregion
 
+        #region Constructor
         public Campingspot(int placenumber, int coordinateX, int coordinateY, double price, string comment)
         {
             this.Placenumber = placenumber;
@@ -51,10 +56,15 @@ namespace WebApplication_SME
             this.Price = price;
             this.Comment = comment;
         }
+        #endregion
+
+        #region Methods
 
         public override string ToString()
         {
             return "Placenumber: " + Placenumber + " CoordintaX: " + CoordinateX + " CoordinateY: " + CoordinateY + " Price: " + Price + " Comment: " + Comment + "";
         }
+
+        #endregion
     }
 }
