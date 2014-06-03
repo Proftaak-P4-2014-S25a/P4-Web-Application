@@ -48,5 +48,10 @@ namespace WebApplication_SME
                     " ImgIndex: " + this.ImgIndex;
 
         }
+
+        public void AddComment(Comment comment)
+        {
+            this.Comments.Add(comment);
+        }
 	}
 }
