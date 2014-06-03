@@ -6,11 +6,14 @@ using System.Web;
 namespace WebApplication_SME
 {
 	public class Material
-	{
+    {
+        #region Fields
         private string type;
         private double price;
         private int amount;
+        #endregion
 
+        #region Properties
         public string Type
         {
             get;
@@ -28,17 +31,22 @@ namespace WebApplication_SME
             get;
             set;
         }
+        #endregion
 
+        #region Constructor
         public Material(string type, double price, int amount)
         {
             this.Type = type;
             this.Price = price;
             this.Amount = amount;
         }
+        #endregion
 
+        #region Methods
         public override string ToString()
         {
             return "Type: " + Type + " Price: " + Price + " Amount: " + Amount + "";
         }
-	}
+        #endregion
+    }
 }

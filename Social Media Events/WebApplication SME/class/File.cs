@@ -6,7 +6,8 @@ using System.Web;
 namespace WebApplication_SME
 {
 	public class File
-	{
+    {
+        #region Properties
         public string Name { get; set; }
         public string Description { get; set; }
         public string Extension { get; set; }
@@ -18,7 +19,9 @@ namespace WebApplication_SME
         public string Path { get; set; }
         public int ImgIndex { get; set; }
         public List<Comment> Comments { get; set; }
+        #endregion
 
+        #region Constructor
         public File(string name,string description,string extension,int size,int rfid,DateTime date,int downloaded,int rating,string path,int imgindex)
         {
             this.Name = name;
@@ -33,7 +36,9 @@ namespace WebApplication_SME
             this.ImgIndex = imgindex;
 
         }
+        #endregion
 
+        #region Methods
         public override string ToString()
         {
             return "Name: " + this.Name +
@@ -48,5 +53,11 @@ namespace WebApplication_SME
                     " ImgIndex: " + this.ImgIndex;
 
         }
-	}
+
+        public void AddComment(Comment comment)
+        {
+            this.Comments.Add(comment);
+        }
+        #endregion
+    }
 }

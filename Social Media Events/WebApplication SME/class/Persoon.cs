@@ -6,22 +6,28 @@ using System.Web;
 namespace WebApplication_SME
 {
 	public abstract class Persoon
-	{
+    {
+        #region Properties
         public int RFID { get; set; }
         public string Password { get; set; }
+        #endregion
 
-       public Persoon(int rfid,string password)
+        #region Constructor
+
+        public Persoon(int rfid,string password)
         {
             this.RFID = rfid;
             this.Password = password;
        }
+        #endregion
 
-       public override string ToString()
+        #region Methods
+
+        public override string ToString()
        {
            return "RFID: " + this.RFID + " " + "wachtwoord: " + Password;
        }
-   
-   
-    
-	}
+
+        #endregion
+    }
 }
