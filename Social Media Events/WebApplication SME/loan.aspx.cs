@@ -18,5 +18,15 @@ namespace WebApplication_SME
                 LoginMenu.Text = "Logout";
             }
         }
+
+        protected void btn_AddItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_Finish_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
