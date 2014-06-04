@@ -6,11 +6,9 @@ using System.Web;
 namespace WebApplication_SME
 {
 	public class ReservationItem
-	{
-        private int reservationnumber;
-        private Campingspot campingspot;
-        private bool hasBeenPaid;
+    {
 
+        #region Properties
         public int Reservationnumber
         {
             get;
@@ -28,6 +26,9 @@ namespace WebApplication_SME
             get;
             set;
         }
+        #endregion
+
+        #region Constructor
 
         public ReservationItem(int reservation, Campingspot campingspot, bool hasBeenPaid)
         {
@@ -36,9 +37,13 @@ namespace WebApplication_SME
             this.HasBeenPaid = hasBeenPaid;
         }
 
+        #endregion
+
+        #region Methods 
         public override string ToString()
         {
             return "Reservationnumber: " + Reservationnumber + " Campingplace: " + Campingspot;
         }
-	}
+        #endregion
+    }
 }
