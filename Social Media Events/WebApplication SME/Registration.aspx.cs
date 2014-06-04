@@ -19,7 +19,6 @@ namespace WebApplication_SME
             {
                 Login.Text = "Logout";
             }
-            Submit.Enabled = false;
         }
 
         protected void Submit_Click(object sender, EventArgs e)
@@ -33,15 +32,15 @@ namespace WebApplication_SME
             //*************** TODO ************************
             //Send email to new user
 
-            SmtpClient smtpClient = new SmtpClient("serveradress", 587);
-            smtpClient.Credentials = new System.Net.NetworkCredential("email@test.com", "password");
+            SmtpClient smtpClient = new SmtpClient("localhost", 25);
+            smtpClient.Credentials = new System.Net.NetworkCredential("administration@sme.com", "Password1");
             smtpClient.UseDefaultCredentials = true;
             smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtpClient.EnableSsl = true;
 
             //Creating the mail message
             MailMessage mail = new MailMessage();
-            mail.From = new MailAddress("email@test.com");
+            mail.From = new MailAddress("administration@sme.com");
             mail.To.Add(new MailAddress(Email.Text));
             mail.Subject = "Validate your email address";
             mail.Body = "Thank you for registering with Social Media Events!" + System.Environment.NewLine +
