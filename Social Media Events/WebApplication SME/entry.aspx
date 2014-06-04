@@ -57,13 +57,19 @@
                     <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="entry" runat="server" Text="Allow entry" />
                 </div>
 
-                <div class="alert alert-success">
-                    <strong>Entry allowed</strong> This RFID belongs to a reservation which has been paid.
+                <div class="entry">
+                    <asp:Panel CssClass="form-control alert alert-success" ID="Succes" runat="server" Visible="true">
+                        <asp:Label ID="SuccesText" runat="server" Text="Entry allowed" />
+                    </asp:Panel>
                 </div>
 
-                <div class="alert alert-danger">
-                    <strong>Entry denied</strong> This RFID belongs to a reservation which has not yet been paid.
+                <div class="entry">
+                    <asp:Panel CssClass="form-control alert alert-danger" ID="Unsuccess" runat="server" Visible="true">
+                        <asp:Label ID="UnsuccesText" runat="server" Text="Entry denied" />
+                    </asp:Panel>
                 </div>
+
+
             </div>
 
         </div>
