@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebApplication_SME
 {
-	public class Reservation
+	public class ReservationItem
 	{
         private int reservationnumber;
         private Campingspot campingspot;
@@ -29,7 +29,7 @@ namespace WebApplication_SME
             set;
         }
 
-        public Reservation(int reservation, Campingspot campingspot, bool hasBeenPaid)
+        public ReservationItem(int reservation, Campingspot campingspot, bool hasBeenPaid)
         {
             this.Reservationnumber = reservation;
             this.Campingspot = campingspot;

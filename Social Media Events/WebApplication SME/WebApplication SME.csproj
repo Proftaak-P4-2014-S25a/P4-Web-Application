@@ -95,9 +95,7 @@
     <Compile Include="class\Material.cs" />
     <Compile Include="class\Medewerker.cs" />
     <Compile Include="class\Persoon.cs" />
-    <Compile Include="class\Reservation.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    <Compile Include="class\ReservationItem.cs" />
     <Compile Include="Entry.aspx.cs">
       <DependentUpon>Entry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -10,16 +10,16 @@ namespace WebApplication_SME
         #region Properties
         public int RFID { get; set; }
         public DateTime Date { get; set; }
-        public string Comment { get; set; }
+        public string CommentText { get; set; }
         #endregion
 
         #region Constructor
 
-        public Comment(int rfid,DateTime date,string comment)
+        public Comment(int rfid,DateTime date,string commentText)
         {
             this.RFID = rfid;
             this.Date = date;
-            this.Comment = comment;
+            this.CommentText = commentText;
         }
         #endregion
 
@@ -29,7 +29,7 @@ namespace WebApplication_SME
         {
             return "RFID: " + this.RFID +
                 " Datum: " + this.Date +
-                " Opmerking: " + this.Comment;
+                " Opmerking: " + this.CommentText;
         }
         #endregion
     }
