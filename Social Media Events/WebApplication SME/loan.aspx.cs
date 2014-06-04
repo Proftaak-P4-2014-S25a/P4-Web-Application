@@ -24,6 +24,11 @@ namespace WebApplication_SME
 
         }
 
+        protected void btn_RemoveItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         protected void btn_Finish_Click(object sender, EventArgs e)
         {
 

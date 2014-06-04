@@ -47,78 +47,99 @@
                 <!--/.nav-collapse -->
             </div>
         </div>
-        <div id="label" class="container ">
-            <asp:Label ID="label1" runat="server" />
-        </div>
         <div class="container">
             <h1>Loan Items</h1>
             <p>Select the items you would like to loan for the event.</p>
-            <p class="lead">
+
+            <!-- Listbox -->
+            <div class="lead">
                 <asp:ListBox ID="lbox_Rentables" runat="server">
                     <asp:ListItem>TestItem01</asp:ListItem>
                     <asp:ListItem>TestItem02</asp:ListItem>
                 </asp:ListBox>
-            </p>
-            &nbsp;
-                <div class="form-register">
+            </div>
+
+            <!--Add/Remove Item Button -->
+            <div class="form-register">
+                <div class="button1">
                     <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="btn_AddItem" runat="server" Text="Add Item" OnClick="btn_AddItem_Click" />
                 </div>
+                <div class="button2">
+                    <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="btn_RemoveItem" runat="server" Text="Remove Item" OnClick="btn_RemoveItem_Click" />
+                </div>
+            </div>
 
-            <div class="col-md-4">
-                <asp:TextBox ID="txt_Chosen1" runat="server" ReadOnly="True"></asp:TextBox>
-                &nbsp;
-            <asp:DropDownList ID="DropDownList1" runat="server">
-                <asp:ListItem Value="1"></asp:ListItem>
-                <asp:ListItem Value="2"></asp:ListItem>
-                <asp:ListItem Value="3"></asp:ListItem>
-                <asp:ListItem Value="4"></asp:ListItem>
-                <asp:ListItem Value="5"></asp:ListItem>
-            </asp:DropDownList>
+            <!-- Item -->
+            <div class="row">
+                <div class="col-md-4">
+                    <asp:TextBox ID="txt_Chosen1" runat="server" ReadOnly="True" Width="270px"></asp:TextBox>
+                    <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:ListItem Value="1"></asp:ListItem>
+                        <asp:ListItem Value="2"></asp:ListItem>
+                        <asp:ListItem Value="3"></asp:ListItem>
+                        <asp:ListItem Value="4"></asp:ListItem>
+                        <asp:ListItem Value="5"></asp:ListItem>
+                    </asp:DropDownList>
+                </div>
             </div>
-            <div class="col-md-4">
-                <asp:TextBox ID="txt_Chosen2" runat="server" ReadOnly="True"></asp:TextBox>
-                &nbsp;
-            <asp:DropDownList ID="DropDownList2" runat="server">
-                <asp:ListItem Value="1"></asp:ListItem>
-                <asp:ListItem Value="2"></asp:ListItem>
-                <asp:ListItem Value="3"></asp:ListItem>
-                <asp:ListItem Value="4"></asp:ListItem>
-                <asp:ListItem Value="5"></asp:ListItem>
-            </asp:DropDownList>
+
+            <!-- Item -->
+            <div class="row">
+                <div class="col-md-4">
+                    <asp:TextBox ID="txt_Chosen2" runat="server" ReadOnly="True" Width="270px"></asp:TextBox>
+                    <asp:DropDownList ID="DropDownList2" runat="server">
+                        <asp:ListItem Value="1"></asp:ListItem>
+                        <asp:ListItem Value="2"></asp:ListItem>
+                        <asp:ListItem Value="3"></asp:ListItem>
+                        <asp:ListItem Value="4"></asp:ListItem>
+                        <asp:ListItem Value="5"></asp:ListItem>
+                    </asp:DropDownList>
+                </div>
             </div>
-            <div class="col-md-4">
-                <asp:TextBox ID="txt_Chosen3" runat="server" ReadOnly="True"></asp:TextBox>
-                &nbsp;
-            <asp:DropDownList ID="DropDownList3" runat="server">
-                <asp:ListItem Value="1"></asp:ListItem>
-                <asp:ListItem Value="2"></asp:ListItem>
-                <asp:ListItem Value="3"></asp:ListItem>
-                <asp:ListItem Value="4"></asp:ListItem>
-                <asp:ListItem Value="5"></asp:ListItem>
-            </asp:DropDownList>
+
+            <!-- Item -->
+            <div class="row">
+                <div class="col-md-4">
+                    <asp:TextBox ID="txt_Chosen3" runat="server" ReadOnly="True" Width="270px"></asp:TextBox>
+                    <asp:DropDownList ID="DropDownList3" runat="server">
+                        <asp:ListItem Value="1"></asp:ListItem>
+                        <asp:ListItem Value="2"></asp:ListItem>
+                        <asp:ListItem Value="3"></asp:ListItem>
+                        <asp:ListItem Value="4"></asp:ListItem>
+                        <asp:ListItem Value="5"></asp:ListItem>
+                    </asp:DropDownList>
+                </div>
             </div>
-            <div class="col-md-4">
-                <asp:TextBox ID="txt_Chosen4" runat="server" ReadOnly="True"></asp:TextBox>
-                &nbsp;
-            <asp:DropDownList ID="DropDownList4" runat="server">
-                <asp:ListItem Value="1"></asp:ListItem>
-                <asp:ListItem Value="2"></asp:ListItem>
-                <asp:ListItem Value="3"></asp:ListItem>
-                <asp:ListItem Value="4"></asp:ListItem>
-                <asp:ListItem Value="5"></asp:ListItem>
-            </asp:DropDownList>
+
+            <!-- Item -->
+            <div class="row">
+                <div class="col-md-4">
+                    <asp:TextBox ID="txt_Chosen4" runat="server" ReadOnly="True" Width="270px"></asp:TextBox>
+                    <asp:DropDownList ID="DropDownList4" runat="server">
+                        <asp:ListItem Value="1"></asp:ListItem>
+                        <asp:ListItem Value="2"></asp:ListItem>
+                        <asp:ListItem Value="3"></asp:ListItem>
+                        <asp:ListItem Value="4"></asp:ListItem>
+                        <asp:ListItem Value="5"></asp:ListItem>
+                    </asp:DropDownList>
+                </div>
             </div>
-            <div class="col-md-4">
-                <asp:TextBox ID="txt_Chosen5" runat="server" ReadOnly="True"></asp:TextBox>
-                &nbsp;
-            <asp:DropDownList ID="DropDownList5" runat="server">
-                <asp:ListItem Value="1"></asp:ListItem>
-                <asp:ListItem Value="2"></asp:ListItem>
-                <asp:ListItem Value="3"></asp:ListItem>
-                <asp:ListItem Value="4"></asp:ListItem>
-                <asp:ListItem Value="5"></asp:ListItem>
-            </asp:DropDownList>
+
+            <!-- Item -->
+            <div class="row">
+                <div class="col-md-4">
+                    <asp:TextBox ID="txt_Chosen5" runat="server" ReadOnly="True" Width="270px"></asp:TextBox>
+                    <asp:DropDownList ID="DropDownList5" runat="server">
+                        <asp:ListItem Value="1"></asp:ListItem>
+                        <asp:ListItem Value="2"></asp:ListItem>
+                        <asp:ListItem Value="3"></asp:ListItem>
+                        <asp:ListItem Value="4"></asp:ListItem>
+                        <asp:ListItem Value="5"></asp:ListItem>
+                    </asp:DropDownList>
+                </div>
             </div>
+
+            <!--Finish Button -->
             <div class="form-register">
                 <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="btn_Finish" runat="server" Text="Finish" OnClick="btn_Finish_Click" />
             </div>
