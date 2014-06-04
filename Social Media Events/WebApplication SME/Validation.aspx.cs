@@ -19,7 +19,7 @@ namespace WebApplication_SME
                 Login.Text = "Logout";
             }
             string rfid = Request.QueryString["user"];
-            user = dbmngr.GetUser(Convert.ToInt32(rfid));
+            user = dbmngr.GetEmail(Convert.ToInt32(rfid));
             StringBuilder sb = new StringBuilder(EmailSent.Text);
             sb.Append(user);
             EmailSent.Text = sb.ToString();

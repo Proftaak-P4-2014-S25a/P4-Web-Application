@@ -26,7 +26,6 @@ namespace WebApplication_SME
             //*************** TODO ************************
             //**** Send data to database ****//
             DatabaseMngr dbmngr = new DatabaseMngr();
-
             
 
             //*************** TODO ************************
@@ -57,7 +56,7 @@ namespace WebApplication_SME
 
             //Won't work yet
             //smtpClient.Send(mail);
-            Response.Redirect("index.aspx");
+            Response.Redirect("Default.aspx");
         }
     }
 }

@@ -28,7 +28,7 @@ namespace WebApplication_SME
         {
             if (!Request.IsAuthenticated)
             {
-                if (this.tb_rfid.Text == "300" && this.tb_pw.Text == "sparta")
+                if (mngr.AuthenticateLogin(tb_rfid.Text, tb_pw.Text))
                 {
                     FormsAuthentication.RedirectFromLoginPage(this.tb_rfid.Text, this.cb_remember.Checked);
                 }
