@@ -49,6 +49,22 @@
                     <!--/.nav-collapse -->
                 </div>
             </div>
+            <div class="container">
+                <h1>Entry Control</h1>
+
+                <!-- Entry button -->
+                <div class="entry">
+                    <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="entry" runat="server" Text="Allow entry" />
+                </div>
+
+                <div class="alert alert-success">
+                    <strong>Entry allowed</strong> This RFID belongs to a reservation which has been paid.
+                </div>
+
+                <div class="alert alert-danger">
+                    <strong>Entry denied</strong> This RFID belongs to a reservation which has not yet been paid.
+                </div>
+            </div>
 
         </div>
     </form>
