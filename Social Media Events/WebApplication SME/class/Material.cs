@@ -7,11 +7,6 @@ namespace WebApplication_SME
 {
 	public class Material
     {
-        #region Fields
-        private string type;
-        private double price;
-        private int amount;
-        #endregion
 
         #region Properties
         public string Type

@@ -7,13 +7,6 @@ namespace WebApplication_SME
 {
     public class Campingspot
     {
-        #region Fields
-        private int placenumber;
-        private int coordinateX;
-        private int coordinateY;
-        private double price;
-        private string comment;
-        #endregion
 
         #region Properties
         public int Placenumber

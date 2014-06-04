@@ -6,13 +6,9 @@ using System.Web;
 namespace WebApplication_SME
 {
 	public class LoanItem
-	{
-        private int reservationnumber;
-        private List<Material> materials;
-        private DateTime loanDate;
-        private DateTime returnDate;
-        private int amount;
+    {
 
+        #region Properties
         public int Reservationnumber
         {
             get;
@@ -42,7 +38,9 @@ namespace WebApplication_SME
             get;
             set;
         }
+        #endregion
 
+        #region Constructor
         public LoanItem(int reservationnumber, DateTime loandate, DateTime returndate)
         {
             this.Reservationnumber = reservationnumber;
@@ -50,6 +48,9 @@ namespace WebApplication_SME
             this.ReturnDate = returndate;
         }
 
+        #endregion
+
+        #region Methods
         public void AddMaterial(Material material)
         {
             Materials.Add(material);
@@ -59,5 +60,6 @@ namespace WebApplication_SME
         {
             return "Reservationnumber: "+Reservationnumber+" Loan Date: "+LoanDate+" Return Date: "+ReturnDate+" Amount: "+Amount;
         }
-	}
+        #endregion
+    }
 }
