@@ -229,6 +229,15 @@ namespace WebApplication_SME {
         protected global::System.Web.UI.WebControls.Button Remove5;
         
         /// <summary>
+        /// Totaal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Totaal;
+        
+        /// <summary>
         /// btn_Finish control.
         /// </summary>
         /// <remarks>

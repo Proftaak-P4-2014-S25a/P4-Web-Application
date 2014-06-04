@@ -153,6 +153,10 @@
                     <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="Remove5" runat="server" Text="X" Height="45px" Width="45px" OnClick="Remove5_Click" />
                 </div>
             </div>
+
+            <div class="label">
+                <asp:Label ID="Totaal" runat="server" Text="Totaal: €"></asp:Label>
+            </div>
             <!--Finish Button -->
             <div class="form-register">
                 <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="btn_Finish" runat="server" Text="Finish" OnClick="btn_Finish_Click" />

@@ -39,7 +39,7 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li>
+                            <li class="active">
                                 <asp:HyperLink ID="Registration" runat="server" CssClass="active" NavigateUrl="Registration.aspx">Registration</asp:HyperLink></li>
                             <li><a href="Loan.aspx">Loan Items</a></li>
                             <li><a href="Entry.aspx">Entry Control</a></li>

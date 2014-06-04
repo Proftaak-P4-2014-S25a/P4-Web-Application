@@ -52,7 +52,10 @@
             <div class="container">
                 <h1>Entry Control</h1>
 
-                <!-- Entry button -->
+                <div class="info">
+                    <asp:TextBox ID="info" runat="server" Text="" Height="36px" Width="410px"></asp:TextBox>
+                </div>
+
                 <div class="entry">
                     <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="entry" runat="server" Text="Allow entry" />
                 </div>
