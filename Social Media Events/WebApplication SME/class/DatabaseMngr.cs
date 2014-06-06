@@ -47,17 +47,16 @@ namespace WebApplication_SME
             {
                 open();
                 OracleCommand cmd = new OracleCommand("CHECKLOGIN", conn);
-                cmd.BindByName = true;
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("RETURN", OracleDbType.Varchar2, 20, ParameterDirection.ReturnValue);
+                cmd.Parameters.Add(new OracleParameter("v_result", OracleDbType.Varchar2, 500, ParameterDirection.ReturnValue));
                 cmd.Parameters.Add("P_RFID", OracleDbType.Varchar2, rfid, ParameterDirection.Input);
                 cmd.Parameters.Add("P_PASS", OracleDbType.Varchar2, password, ParameterDirection.Input);
                 
 
                 cmd.ExecuteNonQuery();
 
-                string auth = cmd.Parameters["RETURN"].Value.ToString();
+                string auth = cmd.Parameters["v_result"].Value.ToString();
 
                 close();
                 if(auth == "true")
