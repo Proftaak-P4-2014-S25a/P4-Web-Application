@@ -25,13 +25,14 @@ namespace WebApplication_SME
 
         protected void btn_AddItem_Click(object sender, EventArgs e)
         {
+            Materials = mngr.GetMaterials();
             if (lbox_Rentables.SelectedItem==null)
             {
                 string error = "SELECTEER IETS";
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + error + "');", true);
                 return;
             }
-            Materials = mngr.GetMaterials();
+            
 
             if (txt_Chosen1.Text == "")
             {
@@ -140,7 +141,7 @@ namespace WebApplication_SME
             {
                 if (m.Type == type)
                 {
-                    m.Amount++;
+                    m.Amount = m.Amount + Convert.ToInt32(DropDownList1.SelectedValue);
                     Update(m.Type, m.Amount);
                     Refresh();
                 }
@@ -157,7 +158,7 @@ namespace WebApplication_SME
             {
                 if (m.Type == type)
                 {
-                    m.Amount++;
+                    m.Amount = m.Amount + Convert.ToInt32(DropDownList2.SelectedValue);
                     Update(m.Type, m.Amount);
                     Refresh();
                 }
@@ -174,7 +175,7 @@ namespace WebApplication_SME
             {
                 if (m.Type == type)
                 {
-                    m.Amount++;
+                    m.Amount = m.Amount + Convert.ToInt32(DropDownList3.SelectedValue);
                     Update(m.Type, m.Amount);
                     Refresh();
                 }
@@ -191,7 +192,7 @@ namespace WebApplication_SME
             {
                 if (m.Type == type)
                 {
-                    m.Amount++;
+                    m.Amount = m.Amount + Convert.ToInt32(DropDownList4.SelectedValue);
                     Update(m.Type, m.Amount);
                     Refresh();
                 }
@@ -208,7 +209,7 @@ namespace WebApplication_SME
             {
                 if (m.Type == type)
                 {
-                    m.Amount++;
+                    m.Amount= m.Amount + Convert.ToInt32(DropDownList5.SelectedValue);
                     Update(m.Type, m.Amount);
                     Refresh();
                 }
@@ -239,6 +240,8 @@ namespace WebApplication_SME
         {
             mngr.UpdateMateriaal(materiaalnaam,amount);
         }
+
+     
 
 
     }
