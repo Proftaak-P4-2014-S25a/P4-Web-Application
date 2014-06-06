@@ -97,5 +97,10 @@ namespace WebApplication_SME
         {
             throw new NotImplementedException();
         }
+
+        public List<Material> GetMaterials()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -51,17 +51,13 @@
             <h1>Loan Items</h1>
             <p>Select the items you would like to loan for the event.</p>
 
+            <div class="form-register">
+                <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="RefreshList" runat="server" Text="Refresh List" OnClick="RefreshList_Click" />
+            </div>
+
             <!-- Listbox -->
             <div class="lead">
-                <asp:ListBox ID="lbox_Rentables" runat="server">
-                    <asp:ListItem>USB stick (4gb)</asp:ListItem>
-                    <asp:ListItem>Laptop (Accer - windows 8)</asp:ListItem>
-                    <asp:ListItem>Laptop (HP - windows 8)</asp:ListItem>
-                    <asp:ListItem>Big tent</asp:ListItem>
-                    <asp:ListItem>Small tent</asp:ListItem>
-                    <asp:ListItem>Camping chair</asp:ListItem>
-                    <asp:ListItem>Camping table</asp:ListItem>
-                </asp:ListBox>
+                <asp:ListBox ID="lbox_Rentables" runat="server"></asp:ListBox>
             </div>
 
             <!--Add Item Button -->
