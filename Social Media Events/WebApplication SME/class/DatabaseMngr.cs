@@ -19,7 +19,9 @@ namespace WebApplication_SME
         {
             conn = new OracleConnection();
         }
-
+        /// <summary>
+        /// opent de connectie
+        /// </summary>
         private void Open()
         {
             try
@@ -59,7 +61,10 @@ namespace WebApplication_SME
             return false;
         }
     
-
+        /// <summary>
+        /// Vekrijg het volgend vrije RFID
+        /// </summary>
+        /// <returns>int RFID</returns>
         public int GetMaxRFID()
         {
             try
@@ -81,7 +86,11 @@ namespace WebApplication_SME
             finally { conn.Close(); }
             return -1;
         }
-
+        /// <summary>
+        /// Verkrijg het email adres van een klant
+        /// </summary>
+        /// <param name="rfid">rfid van de klant</param>
+        /// <returns>string email</returns>
         public string GetEmail(int rfid)
         {
             try
@@ -106,7 +115,10 @@ namespace WebApplication_SME
             return null;
            
         }
-
+/// <summary>
+/// verkrijg alle materialen in de database
+/// </summary>
+/// <returns>lijst materialen</returns>
         public List<Material> GetMaterials()
         {
             List<Material> list = new List<Material>();
@@ -134,7 +146,10 @@ namespace WebApplication_SME
             finally { conn.Close(); }
             return list;
         }
-
+        /// <summary>
+        /// verkrijg alle kampeerplekken
+        /// </summary>
+        /// <returns>lijst van ints kampeerplekken</returns>
         public List<int> GetFreeCampsites()
         {
             List<int> list = new List<int>();
@@ -157,7 +172,11 @@ namespace WebApplication_SME
             finally { conn.Close(); }
             return list;
         }
-
+        /// <summary>
+        /// update materiaal
+        /// </summary>
+        /// <param name="materiaalnaam"></param>
+        /// <param name="amount"></param>
         public void UpdateMateriaal(string materiaalnaam,int amount)
         {
             try
