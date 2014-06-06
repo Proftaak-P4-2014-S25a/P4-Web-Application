@@ -32,19 +32,10 @@ namespace WebApplication_SME
             { }
         }
 
-        private void close()
+        public bool AuthenticateLogin(string rfid, string password)
         {
             try
             {
-                conn.Close();
-            }
-            catch { }
-        }
-
-        public bool AuthenticateLogin(string rfid, string password)
-        {
-            //try
-            //{
                 open();
                 OracleCommand cmd = new OracleCommand("CHECKLOGIN", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -54,14 +45,12 @@ namespace WebApplication_SME
 
                 cmd.Parameters.Add("P_RFID", OracleDbType.Varchar2, rfid, ParameterDirection.Input);
                 cmd.Parameters.Add("P_PASS", OracleDbType.Varchar2, password, ParameterDirection.Input);
-                
+
 
                 cmd.ExecuteNonQuery();
 
                 string auth = cmd.Parameters["v_result"].Value.ToString();
-
-                close();
-                if(auth == "true")
+                if (auth == "true")
                 {
                     return true;
                 }
@@ -69,33 +58,79 @@ namespace WebApplication_SME
                 {
                     return false;
                 }
-            //}
-            //catch { }
-            //finally{ conn.Close(); }
+            }
+            catch { }
+            finally { conn.Close(); }
+            return false;
         }
 
         public int GetMaxRFID()
         {
-            //try
-            //{
-            open();
-            OracleCommand cmd = new OracleCommand("GETFREERFID", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                open();
+                OracleCommand cmd = new OracleCommand("GETMAXRFID", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.Add(new OracleParameter("v_result", OracleDbType.Varchar2, 500, ParameterDirection.ReturnValue));
+                cmd.Parameters.Add(new OracleParameter("v_result", OracleDbType.Varchar2, 500));
+                cmd.Parameters["v_result"].Direction = ParameterDirection.ReturnValue;
 
-            cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
-            string auth = cmd.Parameters["v_result"].Value.ToString();
+                string auth = cmd.Parameters["v_result"].Value.ToString();
 
-            return Convert.ToInt32(auth);
-            //}
-            //catch { }
+                return Convert.ToInt32(auth);
+            }
+            catch { }
+            finally { conn.Close(); }
+            return -1;
         }
 
         public string GetEmail(int RFID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                open();
+                OracleCommand cmd = new OracleCommand("GETEMAILFROMKLANTBETALEND", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("P_RFID", OracleDbType.Int32, RFID, ParameterDirection.Input);
+
+                cmd.Parameters.Add(new OracleParameter("V_EMAIL", OracleDbType.Varchar2, 500));
+                cmd.Parameters["V_EMAIL"].Direction = ParameterDirection.Output;
+
+                cmd.ExecuteNonQuery();
+
+                string auth = cmd.Parameters["V_EMAIL"].Value.ToString();
+
+                return auth;
+            }
+            catch { }
+            finally { conn.Close(); }
+            return null;
+        }
+
+        public List<int> GetFreeCampsites()
+        {
+            List<int> list = new List<int>();
+            try
+            {
+                open();
+                OracleCommand cmd = new OracleCommand("GETCAMPINGSPOTS", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new OracleParameter("V_NUMBER", OracleDbType.RefCursor, 500)).Direction = ParameterDirection.Output;
+
+                OracleDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    list.Add(Convert.ToInt32(reader.GetOracleString(0).ToString()));
+                }
+            }
+            catch { }
+            finally { conn.Close(); }
+            return list;
         }
     }
 }

@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="container">
-                <h1 class="form-register-heading" style="color:green;">Email validated.</h1>
+                <h1 class="form-register-heading" style="color: green;">Email validated.</h1>
                 <h2 class="form-register-heading">Please choose your campsite</h2>
                 <!--Campsite -->
                 <div class="row">
@@ -57,7 +57,8 @@
                         <p>Campsite</p>
                     </div>
                     <div class="col-md-4">
-                        <asp:TextBox CssClass="form-control" ID="TextBox2" type="number" runat="server" required="required" placeholder="123456789" />
+                        <asp:TextBox style="width: 50%; float: left;" CssClass="form-control" ID="tb_CampSite" type="number" runat="server" required="required" placeholder="321"/>
+                        <asp:Label style="width: 30px; float:right; margin: 0px;" CssClass="form-control alert alert-success" ID="GoodCampsite" runat="server" Text="&#x2713;" />
                     </div>
                 </div>
                 <!--Number of members attending -->
@@ -66,13 +67,13 @@
                         <p>Number of members attending</p>
                     </div>
                     <div class="col-md-4">
-                        <asp:TextBox CssClass="form-control" ID="TextBox1" type="number" runat="server" required="required" placeholder="123456789" />
+                        <asp:TextBox CssClass="form-control" ID="tb_Members" type="number" runat="server" required="required" placeholder="3" />
                     </div>
                 </div>
                 <div class="form-register">
                     <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="Submit" Text="Submit" runat="server" OnClick="Submit_Click" />
                 </div>
-                <asp:Label runat="server" ID="EmailSent" style="margin-top:50px; font-size:16px;" Text="An email with login details has been sent to: "/>
+                <asp:Label runat="server" ID="EmailSent" Style="margin-top: 50px; font-size: 16px;" Text="An email with login details has been sent to: " />
             </div>
         </div>
     </form>

@@ -8,6 +8,8 @@ using System.Web.UI.WebControls;
 using System.Web.Security;
 using System.Web.Configuration;
 using System.Configuration;
+using System.DirectoryServices;
+using System.DirectoryServices.ActiveDirectory;
 
 namespace WebApplication_SME
 {
@@ -30,6 +32,7 @@ namespace WebApplication_SME
             {
                 if (mngr.AuthenticateLogin(tb_rfid.Text, tb_pw.Text))
                 {
+                    Session.Add("UserRFID", tb_rfid.Text);
                     FormsAuthentication.RedirectFromLoginPage(this.tb_rfid.Text, this.cb_remember.Checked);
                 }
                 else
@@ -37,6 +40,20 @@ namespace WebApplication_SME
                     this.InvalidLogin.Visible = true;
                 }
             }
+        }
+
+        private bool Authenticate(string userName, string password, string domain)
+        {
+            bool authentic = false;
+            try
+            {
+                DirectoryEntry entry = new DirectoryEntry("LDAP://" + domain,
+                    userName, password);
+                object nativeObject = entry.NativeObject;
+                authentic = true;
+            }
+            catch (DirectoryServicesCOMException) { }
+            return authentic;
         }
     }
 }

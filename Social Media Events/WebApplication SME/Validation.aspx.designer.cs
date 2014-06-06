@@ -31,22 +31,31 @@ namespace WebApplication_SME {
         protected global::System.Web.UI.WebControls.HyperLink Login;
         
         /// <summary>
-        /// TextBox2 control.
+        /// tb_CampSite control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox tb_CampSite;
         
         /// <summary>
-        /// TextBox1 control.
+        /// GoodCampsite control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.Label GoodCampsite;
+        
+        /// <summary>
+        /// tb_Members control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_Members;
         
         /// <summary>
         /// Submit control.

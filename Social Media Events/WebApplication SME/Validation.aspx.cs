@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -20,14 +19,32 @@ namespace WebApplication_SME
             }
             string rfid = Request.QueryString["user"];
             user = dbmngr.GetEmail(Convert.ToInt32(rfid));
-            StringBuilder sb = new StringBuilder(EmailSent.Text);
-            sb.Append(user);
-            EmailSent.Text = sb.ToString();
+            if (user != null)
+            {
+                EmailSent.Text = "An email with login details has been sent to: " + user;
+            }
+            GoodCampsite.Visible = false;
         }
 
         protected void Submit_Click(object sender, EventArgs e)
         {
-
+            GoodCampsite.Visible = true;
+            List<int> campsites = dbmngr.GetFreeCampsites();
+            foreach (int i in campsites)
+            {
+                if (i == Convert.ToInt32(tb_CampSite.Text))
+                {
+                    GoodCampsite.Text = "&#x2713;";
+                    GoodCampsite.CssClass = "form-control alert alert-success";
+                    continue;
+                }
+                else
+                {
+                    GoodCampsite.Text = "&#x2717;";
+                    GoodCampsite.CssClass = "form-control alert alert-danger";
+                    return;
+                }
+            }
         }
     }
 }
