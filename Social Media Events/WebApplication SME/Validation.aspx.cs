@@ -36,13 +36,13 @@ namespace WebApplication_SME
                 {
                     GoodCampsite.Text = "&#x2713;";
                     GoodCampsite.CssClass = "form-control alert alert-success";
-                    continue;
+                    return;
                 }
                 else
                 {
                     GoodCampsite.Text = "&#x2717;";
                     GoodCampsite.CssClass = "form-control alert alert-danger";
-                    return;
+                    continue;
                 }
             }
         }

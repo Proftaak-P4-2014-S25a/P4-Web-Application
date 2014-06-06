@@ -90,13 +90,13 @@
     <Compile Include="class\Campingspot.cs" />
     <Compile Include="class\DatabaseMngr.cs" />
     <Compile Include="class\DirectoryAuthorization.cs" />
-    <Compile Include="class\Klant.cs" />
-    <Compile Include="class\KlantBetalend.cs" />
+    <Compile Include="class\Customer.cs" />
+    <Compile Include="class\PayedCustomer.cs" />
     <Compile Include="class\Map.cs" />
     <Compile Include="class\LoanItem.cs" />
     <Compile Include="class\Material.cs" />
-    <Compile Include="class\Medewerker.cs" />
-    <Compile Include="class\Persoon.cs" />
+    <Compile Include="class\Employee.cs" />
+    <Compile Include="class\Person.cs" />
     <Compile Include="class\ReservationItem.cs" />
     <Compile Include="Entry.aspx.cs">
       <DependentUpon>Entry.aspx</DependentUpon>

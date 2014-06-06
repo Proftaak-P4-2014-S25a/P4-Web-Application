@@ -33,9 +33,10 @@ namespace WebApplication_SME
         }
 
         public bool AuthenticateLogin(string rfid, string password)
+        {
             try
             {
-                open();
+                Open();
                 OracleCommand cmd = new OracleCommand("CHECKLOGIN", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new OracleParameter("v_result", OracleDbType.Varchar2, 500));
@@ -57,12 +58,13 @@ namespace WebApplication_SME
             finally { conn.Close(); }
             return false;
         }
+    
 
         public int GetMaxRFID()
         {
             try
             {
-                open();
+                Open();
                 OracleCommand cmd = new OracleCommand("GETMAXRFID", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -82,18 +84,13 @@ namespace WebApplication_SME
 
         public string GetEmail(int rfid)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<Material> GetMaterials()
-        {
             try
             {
-                open();
+                Open();
                 OracleCommand cmd = new OracleCommand("GETEMAILFROMKLANTBETALEND", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("P_RFID", OracleDbType.Int32, RFID, ParameterDirection.Input);
+                cmd.Parameters.Add("P_RFID", OracleDbType.Int32, rfid, ParameterDirection.Input);
 
                 cmd.Parameters.Add(new OracleParameter("V_EMAIL", OracleDbType.Varchar2, 500));
                 cmd.Parameters["V_EMAIL"].Direction = ParameterDirection.Output;
@@ -107,6 +104,35 @@ namespace WebApplication_SME
             catch { }
             finally { conn.Close(); }
             return null;
+           
+        }
+
+        public List<Material> GetMaterials()
+        {
+            List<Material> list = new List<Material>();
+            try
+            {
+                Open();
+                OracleCommand cmd = new OracleCommand("GetAlleMaterialen", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new OracleParameter("v_materials", OracleDbType.RefCursor, 500)).Direction = ParameterDirection.Output;
+
+                OracleDataReader reader = cmd.ExecuteReader();
+                
+                while (reader.Read())
+                {
+                    list.Add(new Material(Convert.ToString(reader["TYPE"]),
+                        Convert.ToDouble(reader["Verhuurprijs"]),
+                        Convert.ToInt32(reader["Aantal"])));
+                       
+                }
+            }
+            catch 
+            { 
+            }
+            finally { conn.Close(); }
+            return list;
         }
 
         public List<int> GetFreeCampsites()
@@ -114,7 +140,7 @@ namespace WebApplication_SME
             List<int> list = new List<int>();
             try
             {
-                open();
+                Open();
                 OracleCommand cmd = new OracleCommand("GETCAMPINGSPOTS", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -130,6 +156,25 @@ namespace WebApplication_SME
             catch { }
             finally { conn.Close(); }
             return list;
+        }
+
+        public void UpdateMateriaal(string materiaalnaam,int amount)
+        {
+            try
+            {
+                Open();
+                OracleCommand cmd = new OracleCommand("UPDATEMATERIAL", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("P_materiaalnaam", OracleDbType.Varchar2, materiaalnaam, ParameterDirection.Input);
+                cmd.Parameters.Add("p_amount", OracleDbType.Varchar2, amount, ParameterDirection.Input);
+                cmd.ExecuteNonQuery();
+                           
+            }
+            catch { }
+            finally { conn.Close(); }
+           
+
         }
     }
 }
