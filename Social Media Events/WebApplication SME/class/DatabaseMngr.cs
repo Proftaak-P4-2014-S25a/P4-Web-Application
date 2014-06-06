@@ -49,7 +49,9 @@ namespace WebApplication_SME
                 OracleCommand cmd = new OracleCommand("CHECKLOGIN", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add(new OracleParameter("v_result", OracleDbType.Varchar2, 500, ParameterDirection.ReturnValue));
+                cmd.Parameters.Add(new OracleParameter("v_result", OracleDbType.Varchar2, 500));
+                cmd.Parameters["v_result"].Direction = ParameterDirection.ReturnValue;
+
                 cmd.Parameters.Add("P_RFID", OracleDbType.Varchar2, rfid, ParameterDirection.Input);
                 cmd.Parameters.Add("P_PASS", OracleDbType.Varchar2, password, ParameterDirection.Input);
                 
