@@ -40,7 +40,7 @@ namespace WebApplication_SME
         #region Methods
         public override string ToString()
         {
-            return "Type: " + Type + " Price: " + Price + " Amount: " + Amount + "";
+            return "Type: " + Type + " Price: " + Price + " Amount: " + Amount;
         }
         #endregion
     }

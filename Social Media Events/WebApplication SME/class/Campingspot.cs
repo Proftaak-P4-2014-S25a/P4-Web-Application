@@ -55,7 +55,7 @@ namespace WebApplication_SME
 
         public override string ToString()
         {
-            return "Placenumber: " + Placenumber + " CoordintaX: " + CoordinateX + " CoordinateY: " + CoordinateY + " Price: " + Price + " Comment: " + Comment + "";
+            return "Placenumber: " + Placenumber + " CoordintaX: " + CoordinateX + " CoordinateY: " + CoordinateY + " Price: " + Price + " Comment: " + Comment;
         }
 
         #endregion

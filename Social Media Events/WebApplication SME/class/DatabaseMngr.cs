@@ -20,7 +20,7 @@ namespace WebApplication_SME
             conn = new OracleConnection();
         }
 
-        private void open()
+        private void Open()
         {
             try
             {
@@ -33,22 +33,16 @@ namespace WebApplication_SME
         }
 
         public bool AuthenticateLogin(string rfid, string password)
-        {
             try
             {
                 open();
                 OracleCommand cmd = new OracleCommand("CHECKLOGIN", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.Add(new OracleParameter("v_result", OracleDbType.Varchar2, 500));
                 cmd.Parameters["v_result"].Direction = ParameterDirection.ReturnValue;
-
                 cmd.Parameters.Add("P_RFID", OracleDbType.Varchar2, rfid, ParameterDirection.Input);
                 cmd.Parameters.Add("P_PASS", OracleDbType.Varchar2, password, ParameterDirection.Input);
-
-
                 cmd.ExecuteNonQuery();
-
                 string auth = cmd.Parameters["v_result"].Value.ToString();
                 if (auth == "true")
                 {
@@ -70,23 +64,28 @@ namespace WebApplication_SME
             {
                 open();
                 OracleCommand cmd = new OracleCommand("GETMAXRFID", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add(new OracleParameter("v_result", OracleDbType.Varchar2, 500));
                 cmd.Parameters["v_result"].Direction = ParameterDirection.ReturnValue;
 
-                cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();
 
-                string auth = cmd.Parameters["v_result"].Value.ToString();
+            string auth = cmd.Parameters["v_result"].Value.ToString();
 
-                return Convert.ToInt32(auth);
+            return Convert.ToInt32(auth);
             }
             catch { }
             finally { conn.Close(); }
             return -1;
         }
 
-        public string GetEmail(int RFID)
+        public string GetEmail(int rfid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Material> GetMaterials()
         {
             try
             {

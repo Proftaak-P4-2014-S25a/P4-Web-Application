@@ -11,6 +11,9 @@ namespace WebApplication_SME
 {
     public partial class Loan : System.Web.UI.Page
     {
+        private DatabaseMngr mngr = new DatabaseMngr();
+
+        private List<Material> Materials;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.IsAuthenticated)
@@ -23,26 +26,82 @@ namespace WebApplication_SME
         {
             if (txt_Chosen1.Text == "")
             {
-                txt_Chosen1.Text = Convert.ToString(lbox_Rentables.SelectedItem);
+                string item = Convert.ToString(lbox_Rentables.SelectedItem);
+                string type = item.Substring(0, item.IndexOf(","));
+
+                foreach (Material m in Materials)
+                {
+                    if (m.Type == type)
+                        txt_Chosen1.Text = m.Type;
+                    Label1.Text = "€" + m.Price;
+                }
             }
-            else if(txt_Chosen2.Text == "")
+            else if (txt_Chosen2.Text == "")
             {
-                txt_Chosen2.Text = Convert.ToString(lbox_Rentables.SelectedItem);
+                if (txt_Chosen2.Text == "")
+                {
+                    string item = Convert.ToString(lbox_Rentables.SelectedItem);
+                    string type = item.Substring(0, item.IndexOf(","));
+
+                    foreach (Material m in Materials)
+                    {
+                        if (m.Type == type)
+                            txt_Chosen1.Text = m.Type;
+                        Label2.Text = "€" + m.Price;
+                    }
+
+                }
             }
             else if (txt_Chosen3.Text == "")
             {
-                txt_Chosen3.Text = Convert.ToString(lbox_Rentables.SelectedItem);
+                if (txt_Chosen3.Text == "")
+                {
+                    string item = Convert.ToString(lbox_Rentables.SelectedItem);
+                    string type = item.Substring(0, item.IndexOf(","));
+
+                    foreach (Material m in Materials)
+                    {
+                        if (m.Type == type)
+                            txt_Chosen1.Text = m.Type;
+                        Label3.Text = "€" + m.Price;
+                    }
+
+                }
             }
             else if (txt_Chosen4.Text == "")
             {
-                txt_Chosen4.Text = Convert.ToString(lbox_Rentables.SelectedItem);
+                if (txt_Chosen4.Text == "")
+                {
+                    string item = Convert.ToString(lbox_Rentables.SelectedItem);
+                    string type = item.Substring(0, item.IndexOf(","));
+
+                    foreach (Material m in Materials)
+                    {
+                        if (m.Type == type)
+                            txt_Chosen1.Text = m.Type;
+                        Label4.Text = "€" + m.Price;
+                    }
+
+                }
             }
             else if (txt_Chosen5.Text == "")
             {
-                txt_Chosen5.Text = Convert.ToString(lbox_Rentables.SelectedItem);
+                if (txt_Chosen5.Text == "")
+                {
+                    string item = Convert.ToString(lbox_Rentables.SelectedItem);
+                    string type = item.Substring(0, item.IndexOf(","));
+
+                    foreach (Material m in Materials)
+                    {
+                        if (m.Type == type)
+                            txt_Chosen1.Text = m.Type;
+                        Label5.Text = "€" + m.Price;
+                    }
+
+                }
             }
         }
-
+                    
         protected void Remove1_Click(object sender, EventArgs e)
         {
             txt_Chosen1.Text = "";
@@ -78,6 +137,14 @@ namespace WebApplication_SME
 
         }
 
+        protected void RefreshList_Click(object sender, EventArgs e)
+        {
+            List<Material> Materials = mngr.GetMaterials();
 
+            foreach (Material m in Materials)
+            {
+                lbox_Rentables.Items.Add(Convert.ToString(m.Type + "Amount: " + m.Amount));
+            }
+        }
     }
 }
