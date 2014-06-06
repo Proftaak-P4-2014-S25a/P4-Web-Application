@@ -49,7 +49,7 @@ namespace WebApplication_SME
                 OracleCommand cmd = new OracleCommand("CHECKLOGIN", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add(new OracleParameter("v_result", OracleDbType.Varchar2, 500, ParameterDirection.ReturnValue));
+                cmd.Parameters.Add(new OracleParameter("v_result", OracleDbType.Varchar2, ParameterDirection.ReturnValue));
                 cmd.Parameters.Add("P_RFID", OracleDbType.Varchar2, rfid, ParameterDirection.Input);
                 cmd.Parameters.Add("P_PASS", OracleDbType.Varchar2, password, ParameterDirection.Input);
                 
@@ -69,11 +69,26 @@ namespace WebApplication_SME
                 }
             //}
             //catch { }
+            //finally{ conn.Close(); }
         }
 
         public int GetMaxRFID()
         {
-            return 301;
+            //try
+            //{
+            open();
+            OracleCommand cmd = new OracleCommand("GETFREERFID", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add(new OracleParameter("v_result", OracleDbType.Varchar2, 500, ParameterDirection.ReturnValue));
+
+            cmd.ExecuteNonQuery();
+
+            string auth = cmd.Parameters["v_result"].Value.ToString();
+
+            return Convert.ToInt32(auth);
+            //}
+            //catch { }
         }
 
         public string GetEmail(int RFID)
