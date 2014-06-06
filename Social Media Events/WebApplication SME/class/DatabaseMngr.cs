@@ -43,8 +43,8 @@ namespace WebApplication_SME
 
         public bool AuthenticateLogin(string rfid, string password)
         {
-            //try
-            //{
+            try
+            {
                 open();
                 OracleCommand cmd = new OracleCommand("CHECKLOGIN", conn);
                 cmd.BindByName = true;
@@ -68,8 +68,8 @@ namespace WebApplication_SME
                 {
                     return false;
                 }
-            //}
-            //catch { }
+            }
+            catch { throw; }
         }
 
         public int GetMaxRFID()
