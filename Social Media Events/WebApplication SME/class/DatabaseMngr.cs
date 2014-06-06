@@ -20,7 +20,7 @@ namespace WebApplication_SME
             conn = new OracleConnection();
         }
 
-        private void open()
+        private void Open()
         {
             try
             {
@@ -32,35 +32,32 @@ namespace WebApplication_SME
             { }
         }
 
-        private void close()
+        private void Close()
         {
             try
             {
                 conn.Close();
             }
-            catch { }
+            catch 
+            { 
+            }
         }
 
         public bool AuthenticateLogin(string rfid, string password)
         {
             //try
             //{
-                open();
+                Open();
                 OracleCommand cmd = new OracleCommand("CHECKLOGIN", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.Add(new OracleParameter("v_result", OracleDbType.Varchar2, 500));
                 cmd.Parameters["v_result"].Direction = ParameterDirection.ReturnValue;
-
                 cmd.Parameters.Add("P_RFID", OracleDbType.Varchar2, rfid, ParameterDirection.Input);
                 cmd.Parameters.Add("P_PASS", OracleDbType.Varchar2, password, ParameterDirection.Input);
-                
-
                 cmd.ExecuteNonQuery();
-
                 string auth = cmd.Parameters["v_result"].Value.ToString();
 
-                close();
+                Close();
                 if(auth == "true")
                 {
                     return true;
@@ -78,7 +75,7 @@ namespace WebApplication_SME
         {
             //try
             //{
-            open();
+            Open();
             OracleCommand cmd = new OracleCommand("GETFREERFID", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -93,7 +90,7 @@ namespace WebApplication_SME
             //catch { }
         }
 
-        public string GetEmail(int RFID)
+        public string GetEmail(int rfid)
         {
             throw new NotImplementedException();
         }
