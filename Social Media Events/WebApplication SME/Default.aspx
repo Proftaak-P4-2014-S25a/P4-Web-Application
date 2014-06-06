@@ -62,9 +62,9 @@
                         <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide"/>
                         <div class="container">
                             <div class="carousel-caption">
-                                <h1>Example headline.</h1>
-                                <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                                <h1>Welcome on our Website</h1>
+                                <p>If you are here for reserving a camping spot please go to the registration tab. Otherwise sign in with your account</p>
+                                <p><a class="btn btn-lg btn-primary" href="Registration.aspx" role="button">Register</a></p>
                             </div>
                         </div>
                     </div>
@@ -72,9 +72,9 @@
                         <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide"/>
                         <div class="container">
                             <div class="carousel-caption">
-                                <h1>Another example headline.</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                                <h1>Welcome on our Website</h1>
+                                <p>If you want to loan items which are going to be used on the camping, go to the loan tab. Please make sure you are signed in</p>
+                                <p><a class="btn btn-lg btn-primary" href="Loan.aspx" role="button">Loan Items</a></p>
                             </div>
                         </div>
                     </div>
@@ -82,9 +82,9 @@
                         <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide"/>
                         <div class="container">
                             <div class="carousel-caption">
-                                <h1>One more for good measure.</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                                <h1>Welcome on our Website</h1>
+                                <p>Only administrators can take a look at the entry control page. Please sign in as a administrator to do so</p>
+                                <p><a class="btn btn-lg btn-primary" href="entry.aspx" role="button">Entry control</a></p>
                             </div>
                         </div>
                     </div>
