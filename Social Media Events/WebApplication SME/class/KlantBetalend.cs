@@ -48,8 +48,6 @@ namespace WebApplication_SME
                                         "bankaccount" + this.Bankaccount + " " +
                                         "sofinumber" + this.Sofinummer + " " +
                                         "reservationnumber" + this.ReservationNumber + " ";
-
-
         }
         #endregion
     }
