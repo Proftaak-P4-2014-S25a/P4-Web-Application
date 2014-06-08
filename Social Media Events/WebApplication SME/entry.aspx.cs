@@ -28,23 +28,24 @@ namespace WebApplication_SME
             if (mngr.HasPaid(mngr.GetReservationNumber((info.Text))) == "true")
             {
                 Unsuccess.Visible = false;
-                    if (mngr.GetPersoon(info.Text) != null)
-                    {
                         Succes.Visible = true;
                         TextBox_persons.Text = (mngr.GetPersoon(info.Text).ToString());
-                    }
-                    else
-                    {
-                        string error = "Persoon bestaat niet";
-                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + error + "');", true);
-                    }
-                    
             }
+
             else
             {
-                TextBox_persons.Text = (mngr.GetPersoon(info.Text).ToString());
-                Succes.Visible = false;
-                Unsuccess.Visible = true;
+                if (mngr.GetPersoon(info.Text) != null)
+                {
+                    TextBox_persons.Text = (mngr.GetPersoon(info.Text).ToString());
+                    Succes.Visible = false;
+                    Unsuccess.Visible = true;
+                }
+                else
+                {
+                    TextBox_persons.Text = "";
+                    string error = "Persoon bestaat niet";
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + error + "');", true);
+                }
             }
         }
     }
