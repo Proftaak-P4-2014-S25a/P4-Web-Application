@@ -27,7 +27,7 @@ namespace WebApplication_SME
             //**** Send data to database ****//
             DatabaseMngr dbmngr = new DatabaseMngr();
             dbmngr.SetReservation(Name.Text, Street.Text, PostalCode.Text, City.Text, Phone.Text, Email.Text, AccountNumber.Text, SSN.Text, "TEST");
-
+            Response.Redirect("Validation.aspx");
             //*************** TODO ************************
             //Send email to new user
 
