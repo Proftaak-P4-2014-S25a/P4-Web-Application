@@ -11,11 +11,30 @@ namespace WebApplication_SME
 {
     public partial class Entry : System.Web.UI.Page
     {
+        private DatabaseMngr mngr = new DatabaseMngr();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.IsAuthenticated)
             {
+                Succes.Visible = false;
+                Unsuccess.Visible = false;
                 LoginMenu.Text = "Logout";
+            }
+        }
+
+        protected void entry_Click(object sender, EventArgs e)
+        {
+         
+            if (mngr.HasPaid(mngr.GetReservationNumber((info.Text))) == "true")
+            {
+                Unsuccess.Visible = false;
+                Succes.Visible = true;
+                lbox_Persons.Items.Add("TEST");
+            }
+            else
+            {
+                Succes.Visible = false;
+                Unsuccess.Visible = true;
             }
         }
     }

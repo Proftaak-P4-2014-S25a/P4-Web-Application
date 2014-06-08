@@ -44,3 +44,10 @@
     padding: 10px;
     font-size: 16px;
 }
+.lead {
+    float:right;
+    max-width: 600px;
+    padding: 15px;
+    margin: 0 auto;
+    margin-left: 0px;
+}

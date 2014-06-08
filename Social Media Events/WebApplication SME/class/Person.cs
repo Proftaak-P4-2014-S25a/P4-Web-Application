@@ -10,6 +10,7 @@ namespace WebApplication_SME
         #region Properties
         public int RFID { get; set; }
         public string Password { get; set; }
+        public string Type { get; set; }
         #endregion
 
         #region Constructor

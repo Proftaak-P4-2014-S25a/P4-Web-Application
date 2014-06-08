@@ -51,13 +51,20 @@
             </div>
             <div class="container">
                 <h1>Entry Control</h1>
+                <div class="lead">
+                       <asp:ListBox ID="lbox_Persons" runat="server">
+                    <asp:ListItem Text="Refssssssssssssd" Value="#FF0000" />
+                    <asp:ListItem Text="Refssssssssssssssd" Value="#FF0000" />
+                           
+                           </asp:ListBox>
+                </div>
 
                 <div class="info">
                     <asp:TextBox ID="info" runat="server" Text="" Height="36px" Width="410px"></asp:TextBox>
                 </div>
 
                 <div class="entry">
-                    <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="entry" runat="server" Text="Allow entry" />
+                    <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="entry" runat="server" Text="Allow entry" OnClick="entry_Click" />
                 </div>
 
                 <div class="entry">

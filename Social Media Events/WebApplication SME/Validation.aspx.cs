@@ -18,7 +18,7 @@ namespace WebApplication_SME
                 Login.Text = "Logout";
             }
             string rfid = Request.QueryString["user"];
-            user = dbmngr.GetEmail(Convert.ToInt32(rfid));
+            user = dbmngr.GetEmail((rfid));
             if (user != null)
             {
                 EmailSent.Text = "An email with login details has been sent to: " + user;

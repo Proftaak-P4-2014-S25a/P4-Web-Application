@@ -31,6 +31,15 @@ namespace WebApplication_SME {
         protected global::System.Web.UI.WebControls.HyperLink LoginMenu;
         
         /// <summary>
+        /// lbox_Persons control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lbox_Persons;
+        
+        /// <summary>
         /// info control.
         /// </summary>
         /// <remarks>

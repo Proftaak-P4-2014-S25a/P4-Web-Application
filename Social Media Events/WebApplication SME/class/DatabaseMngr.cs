@@ -91,7 +91,7 @@ namespace WebApplication_SME
         /// </summary>
         /// <param name="rfid">rfid van de klant</param>
         /// <returns>string email</returns>
-        public string GetEmail(int rfid)
+        public string GetEmail(string rfid)
         {
             try
             {
@@ -99,7 +99,7 @@ namespace WebApplication_SME
                 OracleCommand cmd = new OracleCommand("GETEMAILFROMKLANTBETALEND", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("P_RFID", OracleDbType.Int32, rfid, ParameterDirection.Input);
+                cmd.Parameters.Add("P_RFID", OracleDbType.Varchar2, rfid, ParameterDirection.Input);
 
                 cmd.Parameters.Add(new OracleParameter("V_EMAIL", OracleDbType.Varchar2, 500));
                 cmd.Parameters["V_EMAIL"].Direction = ParameterDirection.Output;
@@ -186,7 +186,7 @@ namespace WebApplication_SME
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add("P_materiaalnaam", OracleDbType.Varchar2, materiaalnaam, ParameterDirection.Input);
-                cmd.Parameters.Add("p_amount", OracleDbType.Varchar2, amount, ParameterDirection.Input);
+                cmd.Parameters.Add("p_amount", OracleDbType.Int32, amount, ParameterDirection.Input);
                 cmd.ExecuteNonQuery();
                            
             }
@@ -195,5 +195,56 @@ namespace WebApplication_SME
            
 
         }
+        /// <summary>
+        /// returns een reservationnumber 
+        /// </summary>
+        /// <param name="rfid">rfid</param>
+        /// <returns>resevertionnumber int</returns>
+        public int GetReservationNumber(string rfid)
+        {
+            try
+            {
+
+                Open();
+                OracleCommand cmd = new OracleCommand("GETRESERVATIONNUMBER", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_RFID", OracleDbType.Varchar2, rfid, ParameterDirection.Input);
+                cmd.Parameters.Add(new OracleParameter("v_reservationnumber", OracleDbType.Int32, 500));
+                cmd.Parameters["v_reservationnumber"].Direction = ParameterDirection.Output;
+                cmd.ExecuteNonQuery();                               
+                string auth = cmd.Parameters["v_reservationnumber"].Value.ToString();
+                return Convert.ToInt32(auth);
+                          
+            }
+            catch { }
+            finally { conn.Close(); }
+            return -1;
+        }
+        /// <summary>
+        /// checked of reservering betaald is 
+        /// </summary>
+        /// <param name="reservationnumber">reserveringsnummer int</param>
+        /// <returns>true or false ins string</returns>
+        public string HasPaid(int reservationnumber)
+        {
+            try
+            {
+                Open();
+                OracleCommand cmd = new OracleCommand("HASPAID", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_reservationnumber", OracleDbType.Int32, reservationnumber, ParameterDirection.Input);
+                cmd.Parameters.Add(new OracleParameter("v_HASPAID", OracleDbType.Varchar2, 500));
+                cmd.Parameters["v_HASPAID"].Direction = ParameterDirection.Output;
+                cmd.ExecuteNonQuery();
+                string auth = cmd.Parameters["v_HASPAID"].Value.ToString();
+                return auth;
+            }
+
+            catch { }
+            finally { conn.Close(); }
+            return "error";
+        }
+
+      
     }
 }
