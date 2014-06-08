@@ -25,9 +25,9 @@ namespace WebApplication_SME
         #region Methods
         public override string ToString()
         {
-            return base.ToString() + " " + "Name: " + this.Name + " " +
-                                        "Function: " + this.Function + " " +
-                                        "Bankaccount: " + this.Bankaccount + " ";
+            return base.ToString() + "Name: " + this.Name +  Environment.NewLine+
+                                        "Function: " + this.Function + Environment.NewLine +
+                                        "Bankaccount: " + this.Bankaccount + Environment.NewLine;
         }
         #endregion
     }

@@ -8,6 +8,10 @@ using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
 using System.Web.Configuration;
 using System.Configuration;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+
 
 namespace WebApplication_SME
 {
@@ -245,6 +249,99 @@ namespace WebApplication_SME
             return "error";
         }
 
-      
+        public Persoon GetPersoon(string RFID)
+        {
+            Persoon result = null;
+            string sql = "SELECT type FROM P4_Persoon WHERE RFID = " + RFID;
+            try
+            {
+                Open();
+                OracleCommand command = conn.CreateCommand();
+                command.CommandText = sql;
+                OracleDataReader reader1 = command.ExecuteReader();
+                string persoonType = "";
+                while (reader1.Read())
+                {
+                    persoonType = Convert.ToString(reader1["type"]);
+                }
+                if (persoonType=="Medewerker")
+                {
+                    //MEDEWERKER
+                    
+                        sql = "SELECT PER.RFID as RFID, PER.WACHTWOORD as wachtwoord, PER.TYPE as type, med.NAAM as naam, med.functie as functie, med.rekeningnummer as rekeningnummer " +                            
+                            "FROM P4_Persoon per JOIN P4_Medewerker med ON per.RFID = " + RFID + "AND med.RFID = " + RFID;
+
+                        command.CommandText = sql;
+                        OracleDataReader reader2 = command.ExecuteReader();
+                        while (reader2.Read())
+                        {
+
+                            result = new Medewerker( Convert.ToInt32(reader2["RFID"]),
+                                                    Convert.ToString(reader2["wachtwoord"]),
+                                                    Convert.ToString(reader2["naam"]),
+                                                    Convert.ToString(reader2["functie"]),
+                                                    Convert.ToInt32(reader2["rekeningnummer"]));                                            
+                                                    
+                        }
+                        return result;
+                }
+                    //HOOFDBEZOEKER
+                   else if (persoonType=="Klant_betalend")
+                   {
+                        sql = "SELECT PER.RFID as RFID, PER.WACHTWOORD as wachtwoord, PER.TYPE as type, KB.Naam AS naam, KB.Straat AS Straat,	KB.POSTCODE AS postcode," +
+                            "KB.Woonplaats AS Woonplaats, KB.TELEFOON as TELEFOON, KB.EMAIL as email, KB.REKENINGNUMMER AS REKENINGNUMMER, KB.SOFINUMMER AS SOFINUMMER ,KB.RESERVERINGSNUMMER FROM P4_Persoon per JOIN P4_klant_betalend KB ON per.RFID = "
+                            + RFID + "AND KB.RFID = " + RFID;
+
+                        command.CommandText = sql;
+                        OracleDataReader reader3 = command.ExecuteReader();
+                        while (reader3.Read())
+                        {
+                           
+                            result = new KlantBetalend(Convert.ToInt32(reader3["RFID"]),
+                                                    Convert.ToString(reader3["wachtwoord"]),
+                                                    Convert.ToString(reader3["naam"]),
+                                                    Convert.ToString(reader3["Straat"]),
+                                                    Convert.ToString(reader3["postcode"]),
+                                                    Convert.ToString(reader3["Woonplaats"]),
+                                                    Convert.ToString(reader3["TELEFOON"]),
+                                                    Convert.ToString(reader3["email"]),
+                                                    Convert.ToInt32(reader3["REKENINGNUMMER"]),
+                                                    Convert.ToString(reader3["SOFINUMMER"]),
+                                                    Convert.ToInt32(reader3["RESERVERINGSNUMMER"])
+                                                    );
+                        }
+                        return result;
+                   }
+            
+                else if (persoonType=="Klant")
+                    //Klant
+                {
+                        sql = "SELECT PER.RFID as RFID, PER.WACHTWOORD as wachtwoord, PER.TYPE as type,KL.RESERVERINGSNUMMER AS reserveringsnummer " +
+                            "FROM P4_Persoon per JOIN P4_KLANT KL ON per.RFID = "
+                            + RFID + "AND KL.RFID = " + RFID;
+
+                        command.CommandText = sql;
+                        OracleDataReader reader4 = command.ExecuteReader();
+                        while (reader4.Read())
+                        {
+                        
+                            result = new Klant      (Convert.ToInt32(reader4["RFID"]),
+                                                    Convert.ToString(reader4["wachtwoord"]),
+                                                    Convert.ToInt32(reader4["reserveringsnummer"]));
+                                                    
+                        }
+                }
+                return result;
+
+                   
+                }
+            
+    
+            catch
+            {
+                return null;
+            }
+           
+        }
     }
 }

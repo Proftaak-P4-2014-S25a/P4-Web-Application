@@ -39,15 +39,15 @@ namespace WebApplication_SME
 
         public override string ToString()
         {
-            return base.ToString() + " " + "Name: " + this.Name + " " +
-                                        "street: " + this.Street + " " +
-                                        "postalcode: " + this.Postalcode + " " +
-                                        "city: " + this.City + " " +
-                                        "phonenumber: " + this.PhoneNumber + " " +
-                                        "email: " + this.Email + " " +
-                                        "bankaccount" + this.Bankaccount + " " +
-                                        "sofinumber" + this.Sofinummer + " " +
-                                        "reservationnumber" + this.ReservationNumber + " ";
+            return base.ToString()  + "Name: " + this.Name + Environment.NewLine +
+                                        "street: " + this.Street + Environment.NewLine +
+                                        "postalcode: " + this.Postalcode + Environment.NewLine +
+                                        "city: " + this.City + Environment.NewLine +
+                                        "phonenumber: " + this.PhoneNumber + Environment.NewLine +
+                                        "email: " + this.Email + Environment.NewLine +
+                                        "bankaccount: " + this.Bankaccount + Environment.NewLine +
+                                        "sofinumber: " + this.Sofinummer + Environment.NewLine +
+                                        "reservationnumber: " + this.ReservationNumber + Environment.NewLine;
         }
         #endregion
     }

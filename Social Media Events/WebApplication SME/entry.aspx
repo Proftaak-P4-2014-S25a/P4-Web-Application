@@ -52,11 +52,8 @@
             <div class="container">
                 <h1>Entry Control</h1>
                 <div class="lead">
-                       <asp:ListBox ID="lbox_Persons" runat="server">
-                    <asp:ListItem Text="Refssssssssssssd" Value="#FF0000" />
-                    <asp:ListItem Text="Refssssssssssssssd" Value="#FF0000" />
-                           
-                           </asp:ListBox>
+                       <asp:TextBox ID="TextBox_persons" runat="server" Width="600px" Height="600px" TextMode="MultiLine" >                          
+                           </asp:TextBox>
                 </div>
 
                 <div class="info">

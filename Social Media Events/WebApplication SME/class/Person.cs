@@ -26,7 +26,7 @@ namespace WebApplication_SME
 
         public override string ToString()
        {
-           return "RFID: " + this.RFID + " " + "wachtwoord: " + Password;
+           return "RFID: " + this.RFID + Environment.NewLine;
        }
 
         #endregion

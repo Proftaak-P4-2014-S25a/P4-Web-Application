@@ -21,7 +21,7 @@ namespace WebApplication_SME
         #region Methods
         public override string ToString()
         {
-            return base.ToString() + " " + "ReservationNumber: " + this.ReservationNumber + " ";
+            return base.ToString() + "ReservationNumber: " + this.ReservationNumber + Environment.NewLine;
 
         }
         #endregion
