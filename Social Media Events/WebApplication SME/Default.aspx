@@ -38,7 +38,7 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="Registration.aspx">Registration</a></li>
+                            <li><asp:HyperLink href="Registration.aspx" ID="RegMenu" runat="server">Registration</asp:HyperLink></li>
                             <li><a href="Loan.aspx">Loan Items</a></li>
                             <li><a href="Entry.aspx">Entry Control</a></li>
                             <li>
@@ -64,7 +64,7 @@
                             <div class="carousel-caption">
                                 <h1>Welcome on our Website</h1>
                                 <p>If you are here for reserving a camping spot please go to the registration tab. Otherwise sign in with your account</p>
-                                <p><a class="btn btn-lg btn-primary" href="Registration.aspx" role="button">Register</a></p>
+                                  <p><asp:Button ID="Register" class="btn btn-lg btn-primary"  runat="server" href="Registration.aspx" Text="Register" /></p>                
                             </div>
                         </div>
                     </div>

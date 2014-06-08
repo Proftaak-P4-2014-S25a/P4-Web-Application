@@ -10,11 +10,11 @@ namespace WebApplication_SME
         #region Properties
         public string Name { get; set; }
         public string Function { get; set; }
-        public int Bankaccount { get; set; }
+        public string Bankaccount { get; set; }
         #endregion
 
         #region Constructor
-        public Medewerker(int rfid, string password,string name,string function,int bankaccount):base(rfid,password)
+        public Medewerker(int rfid, string password,string name,string function,string bankaccount):base(rfid,password)
         {
             this.Name = name;
             this.Function = function;

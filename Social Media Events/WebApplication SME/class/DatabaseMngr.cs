@@ -249,6 +249,11 @@ namespace WebApplication_SME
             return "error";
         }
 
+        /// <summary>
+        /// verkrijgt een persoon doormiddel van een rfid
+        /// </summary>
+        /// <param name="RFID">RFID int</param>
+        /// <returns>een object van het type Persoon</returns>
         public Persoon GetPersoon(string RFID)
         {
             Persoon result = null;
@@ -280,7 +285,7 @@ namespace WebApplication_SME
                                                     Convert.ToString(reader2["wachtwoord"]),
                                                     Convert.ToString(reader2["naam"]),
                                                     Convert.ToString(reader2["functie"]),
-                                                    Convert.ToInt32(reader2["rekeningnummer"]));                                            
+                                                    Convert.ToString(reader2["rekeningnummer"]));                                            
                                                     
                         }
                         return result;
@@ -343,5 +348,46 @@ namespace WebApplication_SME
             }
            
         }
+        /// <summary>
+        /// maakt een nieuwe reservering aan met gegevens
+        /// </summary>
+        /// <param name="naam">string naam van de klant</param>
+        /// <param name="straat">straat van de klant</param>
+        /// <param name="postcode">postcode van de woonplaats</param>
+        /// <param name="woonplaats">woonplaats</param>
+        /// <param name="telefoon">telefoonnummer</param>
+        /// <param name="email">email</param>
+        /// <param name="rekeningnummer">rekeningnummer</param>
+        /// <param name="sofinummer">sofinummer</param>
+        /// <param name="wachtwoord">wachtwoord</param>
+
+        public void SetReservation(string naam, string straat,string postcode,string woonplaats,string telefoon,string email, string rekeningnummer,string sofinummer,string wachtwoord)
+        {
+            try
+            {
+                Open();
+                OracleCommand cmd = new OracleCommand("SETRESERVATION", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("p_name", OracleDbType.Varchar2, naam, ParameterDirection.Input);
+                cmd.Parameters.Add("p_street", OracleDbType.Varchar2, straat, ParameterDirection.Input);
+                cmd.Parameters.Add("p_postcode", OracleDbType.Varchar2, postcode, ParameterDirection.Input);
+                cmd.Parameters.Add("p_woonplaats", OracleDbType.Varchar2, woonplaats, ParameterDirection.Input);
+                cmd.Parameters.Add("p_telefoon", OracleDbType.Varchar2, telefoon, ParameterDirection.Input);
+                cmd.Parameters.Add("p_email", OracleDbType.Varchar2, email, ParameterDirection.Input);
+                cmd.Parameters.Add("p_rekeningnummer", OracleDbType.Varchar2, rekeningnummer, ParameterDirection.Input);
+                cmd.Parameters.Add("p_sofinummer", OracleDbType.Varchar2, sofinummer, ParameterDirection.Input);
+                cmd.Parameters.Add("p_wachtwoord", OracleDbType.Varchar2, wachtwoord, ParameterDirection.Input);
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch { }
+            finally { conn.Close(); }
+
+
+        }
+
+
     }
 }

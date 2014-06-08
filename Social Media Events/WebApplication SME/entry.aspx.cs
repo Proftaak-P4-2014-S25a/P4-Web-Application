@@ -19,6 +19,7 @@ namespace WebApplication_SME
                 Succes.Visible = false;
                 Unsuccess.Visible = false;
                 LoginMenu.Text = "Logout";
+                RegMenu.Visible = false;
             }
         }
 

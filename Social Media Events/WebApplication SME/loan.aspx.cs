@@ -20,6 +20,7 @@ namespace WebApplication_SME
             if (Request.IsAuthenticated)
             {
                 LoginMenu.Text = "Logout";
+                RegMenu.Visible = false;
             }
         }
 
