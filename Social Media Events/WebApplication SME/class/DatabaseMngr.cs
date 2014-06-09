@@ -388,6 +388,52 @@ namespace WebApplication_SME
 
         }
 
+        /// <summary>
+        /// Voegt een kampeerplaats toe aan een reserverig
+        /// </summary>
+        /// <param name="reserveringsnummer">reserveringsnummer</param>
+        /// <param name="plaatsnummer">plaatsnummer</param>
+        public void SetKampeerplaats(string reserveringsnummer, string plaatsnummer)
+        {
+            try
+            {
+                Open();
+                OracleCommand cmd = new OracleCommand("SETKAMPEERPLAATS", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.Add("p_reserveringsnummer", OracleDbType.Varchar2, reserveringsnummer, ParameterDirection.Input);
+                cmd.Parameters.Add("p_plaatsnummer", OracleDbType.Varchar2, plaatsnummer, ParameterDirection.Input);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch { }
+            finally { conn.Close(); }
+
+
+        }
+        /// <summary>
+        /// voegt klant toe 
+        /// </summary>
+        /// <param name="reserveringsnummer">reserveringsnummer</param>
+        /// <param name="wachtwoord">wachtwoord</param>
+
+        public void AddKlant(string reserveringsnummer, string wachtwoord)
+        {
+            try
+            {
+                Open();
+                OracleCommand cmd = new OracleCommand("ADDKLANT", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("p_reserveringsnummer", OracleDbType.Varchar2, reserveringsnummer, ParameterDirection.Input);
+                cmd.Parameters.Add("p_wachtwoord", OracleDbType.Varchar2, wachtwoord, ParameterDirection.Input);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch { }
+            finally { conn.Close(); }
+
+
+        }
     }
 }

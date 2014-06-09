@@ -36,7 +36,14 @@ namespace WebApplication_SME
                 {
                     GoodCampsite.Text = "&#x2713;";
                     GoodCampsite.CssClass = "form-control alert alert-success";
+                    string rfid = Request.QueryString["user"];
+                    dbmngr.SetKampeerplaats(Convert.ToString(dbmngr.GetReservationNumber(rfid)), tb_CampSite.Text);
+                    for (int x = 1; x <= Convert.ToInt32(tb_Members.Text); x++)
+                    {
+                        dbmngr.AddKlant(Convert.ToString(dbmngr.GetReservationNumber(rfid)), "TEST1");
+                    }
                     return;
+                    
                 }
                 else
                 {
