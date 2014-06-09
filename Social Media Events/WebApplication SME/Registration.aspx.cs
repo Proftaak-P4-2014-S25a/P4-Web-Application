@@ -27,7 +27,7 @@ namespace WebApplication_SME
             //**** Send data to database ****//
             DatabaseMngr dbmngr = new DatabaseMngr();
             dbmngr.SetReservation(Name.Text, Street.Text, PostalCode.Text, City.Text, Phone.Text, Email.Text, AccountNumber.Text, SSN.Text, "TEST");
-            Response.Redirect("Validation.aspx");
+            
             //*************** TODO ************************
             //Send email to new user
 
@@ -52,7 +52,7 @@ namespace WebApplication_SME
                 "Bank account number: " + AccountNumber.Text + System.Environment.NewLine +
                 "Social Security Number: " + SSN.Text + System.Environment.NewLine + System.Environment.NewLine +
                 "If this data is correct, please validate your account by visiting this page: " + System.Environment.NewLine +
-                "http://localhost:1515/Validation.aspx?user=" + dbmngr.GetMaxRFID().ToString();
+                "http://localhost:1515/Validation.aspx?user=" + dbmngr.GetMaxRFID().ToString(); 
 
             //Won't work yet
             //smtpClient.Send(mail);

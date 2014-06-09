@@ -30,7 +30,6 @@ namespace WebApplication_SME
         {
             try
             {
-
                 conn.ConnectionString = "User Id= sme; Password= password; Data Source= 192.168.19.163:1521;";
                 conn.Open();
             }
@@ -75,16 +74,12 @@ namespace WebApplication_SME
             {
                 Open();
                 OracleCommand cmd = new OracleCommand("GETMAXRFID", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new OracleParameter("v_result", OracleDbType.Varchar2, 500));
                 cmd.Parameters["v_result"].Direction = ParameterDirection.ReturnValue;
-
-            cmd.ExecuteNonQuery();
-
-            string auth = cmd.Parameters["v_result"].Value.ToString();
-
-            return Convert.ToInt32(auth);
+                cmd.ExecuteNonQuery();
+                string auth = cmd.Parameters["v_result"].Value.ToString();
+                return Convert.ToInt32(auth);
             }
             catch { }
             finally { conn.Close(); }
@@ -102,16 +97,11 @@ namespace WebApplication_SME
                 Open();
                 OracleCommand cmd = new OracleCommand("GETEMAILFROMKLANTBETALEND", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.Add("P_RFID", OracleDbType.Varchar2, rfid, ParameterDirection.Input);
-
                 cmd.Parameters.Add(new OracleParameter("V_EMAIL", OracleDbType.Varchar2, 500));
                 cmd.Parameters["V_EMAIL"].Direction = ParameterDirection.Output;
-
                 cmd.ExecuteNonQuery();
-
                 string auth = cmd.Parameters["V_EMAIL"].Value.ToString();
-
                 return auth;
             }
             catch { }
@@ -131,17 +121,13 @@ namespace WebApplication_SME
                 Open();
                 OracleCommand cmd = new OracleCommand("GetAlleMaterialen", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.Add(new OracleParameter("v_materials", OracleDbType.RefCursor, 500)).Direction = ParameterDirection.Output;
-
-                OracleDataReader reader = cmd.ExecuteReader();
-                
+                OracleDataReader reader = cmd.ExecuteReader();                
                 while (reader.Read())
                 {
                     list.Add(new Material(Convert.ToString(reader["TYPE"]),
                         Convert.ToDouble(reader["Verhuurprijs"]),
-                        Convert.ToInt32(reader["Aantal"])));
-                       
+                        Convert.ToInt32(reader["Aantal"])));                      
                 }
             }
             catch 
@@ -162,11 +148,8 @@ namespace WebApplication_SME
                 Open();
                 OracleCommand cmd = new OracleCommand("GETCAMPINGSPOTS", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.Add(new OracleParameter("V_NUMBER", OracleDbType.RefCursor, 500)).Direction = ParameterDirection.Output;
-
                 OracleDataReader reader = cmd.ExecuteReader();
-
                 while (reader.Read())
                 {
                     list.Add(Convert.ToInt32(reader.GetOracleString(0).ToString()));
@@ -188,16 +171,13 @@ namespace WebApplication_SME
                 Open();
                 OracleCommand cmd = new OracleCommand("UPDATEMATERIAL", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.Add("P_materiaalnaam", OracleDbType.Varchar2, materiaalnaam, ParameterDirection.Input);
                 cmd.Parameters.Add("p_amount", OracleDbType.Int32, amount, ParameterDirection.Input);
                 cmd.ExecuteNonQuery();
                            
             }
             catch { }
-            finally { conn.Close(); }
-           
-
+            finally { conn.Close(); }          
         }
         /// <summary>
         /// returns een reservationnumber 
@@ -208,7 +188,6 @@ namespace WebApplication_SME
         {
             try
             {
-
                 Open();
                 OracleCommand cmd = new OracleCommand("GETRESERVATIONNUMBER", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -285,8 +264,7 @@ namespace WebApplication_SME
                                                     Convert.ToString(reader2["wachtwoord"]),
                                                     Convert.ToString(reader2["naam"]),
                                                     Convert.ToString(reader2["functie"]),
-                                                    Convert.ToString(reader2["rekeningnummer"]));                                            
-                                                    
+                                                    Convert.ToString(reader2["rekeningnummer"]));                                                                                                
                         }
                         return result;
                 }
@@ -300,8 +278,7 @@ namespace WebApplication_SME
                         command.CommandText = sql;
                         OracleDataReader reader3 = command.ExecuteReader();
                         while (reader3.Read())
-                        {
-                           
+                        {                          
                             result = new KlantBetalend(Convert.ToInt32(reader3["RFID"]),
                                                     Convert.ToString(reader3["wachtwoord"]),
                                                     Convert.ToString(reader3["naam"]),
@@ -332,21 +309,16 @@ namespace WebApplication_SME
                         
                             result = new Klant      (Convert.ToInt32(reader4["RFID"]),
                                                     Convert.ToString(reader4["wachtwoord"]),
-                                                    Convert.ToInt32(reader4["reserveringsnummer"]));
-                                                    
+                                                    Convert.ToInt32(reader4["reserveringsnummer"]));                                                  
                         }
                 }
-                return result;
-
-                   
+                return result;                  
                 }
-            
-    
+               
             catch
             {
                 return null;
-            }
-           
+            }          
         }
         /// <summary>
         /// maakt een nieuwe reservering aan met gegevens
@@ -368,7 +340,6 @@ namespace WebApplication_SME
                 Open();
                 OracleCommand cmd = new OracleCommand("SETRESERVATION", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.Add("p_name", OracleDbType.Varchar2, naam, ParameterDirection.Input);
                 cmd.Parameters.Add("p_street", OracleDbType.Varchar2, straat, ParameterDirection.Input);
                 cmd.Parameters.Add("p_postcode", OracleDbType.Varchar2, postcode, ParameterDirection.Input);
@@ -378,7 +349,6 @@ namespace WebApplication_SME
                 cmd.Parameters.Add("p_rekeningnummer", OracleDbType.Varchar2, rekeningnummer, ParameterDirection.Input);
                 cmd.Parameters.Add("p_sofinummer", OracleDbType.Varchar2, sofinummer, ParameterDirection.Input);
                 cmd.Parameters.Add("p_wachtwoord", OracleDbType.Varchar2, wachtwoord, ParameterDirection.Input);
-
                 cmd.ExecuteNonQuery();
 
             }
@@ -400,7 +370,6 @@ namespace WebApplication_SME
                 Open();
                 OracleCommand cmd = new OracleCommand("SETKAMPEERPLAATS", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.Add("p_reserveringsnummer", OracleDbType.Varchar2, reserveringsnummer, ParameterDirection.Input);
                 cmd.Parameters.Add("p_plaatsnummer", OracleDbType.Varchar2, plaatsnummer, ParameterDirection.Input);
                 cmd.ExecuteNonQuery();
@@ -424,7 +393,6 @@ namespace WebApplication_SME
                 Open();
                 OracleCommand cmd = new OracleCommand("ADDKLANT", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.Add("p_reserveringsnummer", OracleDbType.Varchar2, reserveringsnummer, ParameterDirection.Input);
                 cmd.Parameters.Add("p_wachtwoord", OracleDbType.Varchar2, wachtwoord, ParameterDirection.Input);
                 cmd.ExecuteNonQuery();
