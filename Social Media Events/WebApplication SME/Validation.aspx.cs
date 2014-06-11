@@ -11,6 +11,7 @@ namespace WebApplication_SME
     {
         private string user;
         private DatabaseMngr dbmngr = new DatabaseMngr();
+        private List<Campingspot> spots = new List<Campingspot>();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.IsAuthenticated)
@@ -24,6 +25,13 @@ namespace WebApplication_SME
                 EmailSent.Text = "An email with login details has been sent to: " + user;
             }
             GoodCampsite.Visible = false;
+            spots = dbmngr.GetFreeCampingSpots();
+            lbox_Spots.Items.Clear();
+            foreach(Campingspot spot in spots)
+            {
+                lbox_Spots.Items.Add(spot.ToString());
+            }
+
         }
 
         protected void Submit_Click(object sender, EventArgs e)

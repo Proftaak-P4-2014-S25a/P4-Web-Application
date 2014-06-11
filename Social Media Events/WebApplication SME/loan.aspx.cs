@@ -45,8 +45,9 @@ namespace WebApplication_SME
                     if (m.Type == type)
                     {
                         txt_Chosen1.Text = m.Type;
-                        Label1.Text = "€" + m.Price;
+                        Label9.Text = Convert.ToString(m.Price);
                         m.Amount--;
+                        Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
                         Update(m.Type, m.Amount);
                         Refresh();
                     }
@@ -63,8 +64,9 @@ namespace WebApplication_SME
                         if (m.Type == type)
                         {
                             txt_Chosen2.Text = m.Type;
-                            Label2.Text = "€" + m.Price;
+                            Label8.Text = Convert.ToString(m.Price);
                             m.Amount--;
+                            Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
                             Update(m.Type, m.Amount);
                             Refresh();
                         }
@@ -83,8 +85,9 @@ namespace WebApplication_SME
                         if (m.Type == type)
                         {
                             txt_Chosen3.Text = m.Type;
-                            Label3.Text = "€" + m.Price;
+                            Label7.Text = Convert.ToString(m.Price);
                             m.Amount--;
+                            Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
                             Update(m.Type, m.Amount);
                             Refresh();
                         }
@@ -103,8 +106,9 @@ namespace WebApplication_SME
                         if (m.Type == type)
                         {
                             txt_Chosen4.Text = m.Type;
-                            Label4.Text = "€" + m.Price;
+                            Label10.Text = Convert.ToString(m.Price);
                             m.Amount--;
+                            Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
                             Update(m.Type, m.Amount);
                             Refresh();
                         }
@@ -123,8 +127,9 @@ namespace WebApplication_SME
                         if (m.Type == type)
                         {
                             txt_Chosen5.Text = m.Type;
-                            Label5.Text = "€" + m.Price;
+                            Label6.Text = Convert.ToString(m.Price);
                             m.Amount--;
+                            Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
                             Update(m.Type, m.Amount);
                             Refresh();
                         }
@@ -142,13 +147,15 @@ namespace WebApplication_SME
             {
                 if (m.Type == type)
                 {
-                    m.Amount = m.Amount + Convert.ToInt32(DropDownList1.SelectedValue);
+                    m.Amount = m.Amount + 1;
                     Update(m.Type, m.Amount);
                     Refresh();
                 }
             }
             txt_Chosen1.Text = "";
             Label1.Text = "€";
+            Label9.Text = "0";
+            Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
         }
 
         protected void Remove2_Click(object sender, EventArgs e)
@@ -159,13 +166,15 @@ namespace WebApplication_SME
             {
                 if (m.Type == type)
                 {
-                    m.Amount = m.Amount + Convert.ToInt32(DropDownList2.SelectedValue);
+                    m.Amount = m.Amount + 1;
                     Update(m.Type, m.Amount);
                     Refresh();
                 }
             }
             txt_Chosen2.Text = "";
             Label2.Text = "€";
+            Label8.Text = "0";
+            Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
         }
 
         protected void Remove3_Click(object sender, EventArgs e)
@@ -176,13 +185,15 @@ namespace WebApplication_SME
             {
                 if (m.Type == type)
                 {
-                    m.Amount = m.Amount + Convert.ToInt32(DropDownList3.SelectedValue);
+                    m.Amount = m.Amount + 1;
                     Update(m.Type, m.Amount);
                     Refresh();
                 }
             }
             txt_Chosen3.Text = "";
             Label3.Text = "€";
+            Label7.Text = "0";
+            Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
         }
 
         protected void Remove4_Click(object sender, EventArgs e)
@@ -193,13 +204,15 @@ namespace WebApplication_SME
             {
                 if (m.Type == type)
                 {
-                    m.Amount = m.Amount + Convert.ToInt32(DropDownList4.SelectedValue);
+                    m.Amount = m.Amount + 1;
                     Update(m.Type, m.Amount);
                     Refresh();
                 }
             }
             txt_Chosen4.Text = "";
             Label4.Text = "€";
+            Label10.Text = "0";
+            Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
         }
 
         protected void Remove5_Click(object sender, EventArgs e)
@@ -210,13 +223,15 @@ namespace WebApplication_SME
             {
                 if (m.Type == type)
                 {
-                    m.Amount= m.Amount + Convert.ToInt32(DropDownList5.SelectedValue);
+                    m.Amount = m.Amount + 1;
                     Update(m.Type, m.Amount);
                     Refresh();
                 }
             }
             txt_Chosen5.Text = "";
             Label5.Text = "€";
+            Label6.Text = "0";
+            Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
         }
 
         protected void btn_Finish_Click(object sender, EventArgs e)

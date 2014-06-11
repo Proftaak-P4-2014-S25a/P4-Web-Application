@@ -60,6 +60,10 @@
                         <asp:TextBox style="width: 50%; float: left;" CssClass="form-control" ID="tb_CampSite" type="number" runat="server" required="required" placeholder="321"/>
                         <asp:Label style="width: 30px; float:right; margin: 0px;" CssClass="form-control alert alert-success" ID="GoodCampsite" runat="server" Text="&#x2713;" />
                     </div>
+                  <div class="lbox">
+                <asp:ListBox ID="lbox_Spots" runat="server" >                 
+                </asp:ListBox>
+            </div>
                 </div>
                 <!--Number of members attending -->
                 <div class="row">

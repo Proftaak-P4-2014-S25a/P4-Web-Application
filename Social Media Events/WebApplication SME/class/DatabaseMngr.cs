@@ -400,8 +400,36 @@ namespace WebApplication_SME
             }
             catch { }
             finally { conn.Close(); }
-
-
+        }
+        /// <summary>
+        /// verkrijg list van vrije kampeerplaatsen
+        /// </summary>
+        /// <returns></returns>
+        public List<Campingspot> GetFreeCampingSpots()
+        {
+            List<Campingspot> list = new List<Campingspot>();
+            try
+            {
+                Open();
+                OracleCommand cmd = new OracleCommand("GETFREECAMPINGSPOTS", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new OracleParameter("v_spots", OracleDbType.RefCursor, 500)).Direction = ParameterDirection.Output;
+                OracleDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(new Campingspot(Convert.ToInt32(reader["PLAATSNUMMER"]),
+                        Convert.ToInt32(reader["COORDINAAT_X"]),
+                        Convert.ToInt32(reader["COORDINAAT_Y"]),
+                        Convert.ToDouble(reader["PRIJS"]),
+                        Convert.ToString(reader["OPMERKINGEN"])
+                        ));
+                }
+            }
+            catch
+            {
+            }
+            finally { conn.Close(); }
+            return list;
         }
     }
 }

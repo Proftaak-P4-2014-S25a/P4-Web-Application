@@ -67,15 +67,9 @@
             <!-- Item -->
             <div class="row">
                 <div class="col-md-4">
-                    <asp:TextBox ID="txt_Chosen1" runat="server" ReadOnly="True" Width="250px"></asp:TextBox>
-                    <asp:DropDownList ID="DropDownList1" runat="server" >
-                        <asp:ListItem Value="1"></asp:ListItem>
-                        <asp:ListItem Value="2"></asp:ListItem>
-                        <asp:ListItem Value="3"></asp:ListItem>
-                        <asp:ListItem Value="4"></asp:ListItem>
-                        <asp:ListItem Value="5"></asp:ListItem>
-                    </asp:DropDownList>
+                  <asp:TextBox ID="txt_Chosen1" runat="server" ReadOnly="True" Width="250px"></asp:TextBox>
                     <asp:Label ID="Label1" runat="server" Text="€"></asp:Label>
+                    <asp:Label ID="Label9" runat="server" Text="0"></asp:Label>
                 </div>
                 <div class="remove">
                     <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="Remove1" runat="server" Text="X" Height="45px" Width="45px" OnClick="Remove1_Click" />
@@ -84,15 +78,9 @@
             <!-- Item -->
             <div class="row">
                 <div class="col-md-4">
-                    <asp:TextBox ID="txt_Chosen2" runat="server" ReadOnly="True" Width="250px"></asp:TextBox>
-                    <asp:DropDownList ID="DropDownList2" runat="server">
-                        <asp:ListItem Value="1"></asp:ListItem>
-                        <asp:ListItem Value="2"></asp:ListItem>
-                        <asp:ListItem Value="3"></asp:ListItem>
-                        <asp:ListItem Value="4"></asp:ListItem>
-                        <asp:ListItem Value="5"></asp:ListItem>
-                    </asp:DropDownList>
+                   <asp:TextBox ID="txt_Chosen2" runat="server" ReadOnly="True" Width="250px"></asp:TextBox>
                     <asp:Label ID="Label2" runat="server" Text="€"></asp:Label>
+                    <asp:Label ID="Label8" runat="server" Text="0"></asp:Label>
                 </div>
                 <div class="remove">
                     <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="Remove2" runat="server" Text="X" Height="45px" Width="45px" OnClick="Remove2_Click" />
@@ -102,14 +90,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <asp:TextBox ID="txt_Chosen3" runat="server" ReadOnly="True" Width="250px"></asp:TextBox>
-                    <asp:DropDownList ID="DropDownList3" runat="server">
-                        <asp:ListItem Value="1"></asp:ListItem>
-                        <asp:ListItem Value="2"></asp:ListItem>
-                        <asp:ListItem Value="3"></asp:ListItem>
-                        <asp:ListItem Value="4"></asp:ListItem>
-                        <asp:ListItem Value="5"></asp:ListItem>
-                    </asp:DropDownList>
+                   
                     <asp:Label ID="Label3" runat="server" Text="€"></asp:Label>
+                    <asp:Label ID="Label7" runat="server" Text="0"></asp:Label>
                 </div>
                 <div class="remove">
                     <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="Remove3" runat="server" Text="X" Height="45px" Width="45px" OnClick="Remove3_Click" />
@@ -119,14 +102,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <asp:TextBox ID="txt_Chosen4" runat="server" ReadOnly="True" Width="250px"></asp:TextBox>
-                    <asp:DropDownList ID="DropDownList4" runat="server">
-                        <asp:ListItem Value="1"></asp:ListItem>
-                        <asp:ListItem Value="2"></asp:ListItem>
-                        <asp:ListItem Value="3"></asp:ListItem>
-                        <asp:ListItem Value="4"></asp:ListItem>
-                        <asp:ListItem Value="5"></asp:ListItem>
-                    </asp:DropDownList>
+                   
                     <asp:Label ID="Label4" runat="server" Text="€"></asp:Label>
+                    <asp:Label ID="Label10" runat="server" Text="0"></asp:Label>
                 </div>
                 <div class="remove">
                     <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="Remove4" runat="server" Text="X" Height="45px" Width="45px" OnClick="Remove4_Click" />
@@ -136,14 +114,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <asp:TextBox ID="txt_Chosen5" runat="server" ReadOnly="True" Width="250px"></asp:TextBox>
-                    <asp:DropDownList ID="DropDownList5" runat="server">
-                        <asp:ListItem Value="1"></asp:ListItem>
-                        <asp:ListItem Value="2"></asp:ListItem>
-                        <asp:ListItem Value="3"></asp:ListItem>
-                        <asp:ListItem Value="4"></asp:ListItem>
-                        <asp:ListItem Value="5"></asp:ListItem>
-                    </asp:DropDownList>
+                   
                     <asp:Label ID="Label5" runat="server" Text="€"></asp:Label>
+                    <asp:Label ID="Label6" runat="server" Text="0"></asp:Label>
                 </div>
                 <div class="remove">
                     <asp:Button CssClass="btn btn-lg btn-primary btn-block" ID="Remove5" runat="server" Text="X" Height="45px" Width="45px" OnClick="Remove5_Click" />
@@ -152,6 +125,7 @@
 
             <div class="label">
                 <asp:Label ID="Totaal" runat="server" Text="Totaal: €"></asp:Label>
+                 <asp:Label ID="Label11" runat="server" Text="0"></asp:Label>
             </div>
             <!--Finish Button -->
             <div class="form-register">

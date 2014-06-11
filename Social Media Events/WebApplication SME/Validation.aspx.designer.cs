@@ -49,6 +49,15 @@ namespace WebApplication_SME {
         protected global::System.Web.UI.WebControls.Label GoodCampsite;
         
         /// <summary>
+        /// lbox_Spots control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lbox_Spots;
+        
+        /// <summary>
         /// tb_Members control.
         /// </summary>
         /// <remarks>
