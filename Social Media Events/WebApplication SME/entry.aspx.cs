@@ -31,8 +31,7 @@ namespace WebApplication_SME
                 Succes.Visible = true;
                 TextBox_persons.Text = (mngr.GetPersoon(info.Text).ToString());
             }
-
-            if (mngr.HasPaid(mngr.GetReservationNumber((info.Text))) == "true")
+            else if (mngr.HasPaid(mngr.GetReservationNumber((info.Text))) == "true")
             {
                 Unsuccess.Visible = false;
                 Succes.Visible = true;
