@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net.Mail;
+using System.Net;
 
 namespace WebApplication_SME
 {
@@ -22,12 +24,12 @@ namespace WebApplication_SME
             user = dbmngr.GetEmail((rfid));
             if (user != null)
             {
-                EmailSent.Text = "An email with login details has been sent to: " + user;
+                EmailSent.Text = "An email with login details will be sent to: " + user;
             }
             GoodCampsite.Visible = false;
             spots = dbmngr.GetFreeCampingSpots();
             lbox_Spots.Items.Clear();
-            foreach(Campingspot spot in spots)
+            foreach (Campingspot spot in spots)
             {
                 lbox_Spots.Items.Add(spot.ToString());
             }
@@ -50,16 +52,39 @@ namespace WebApplication_SME
                     {
                         dbmngr.AddKlant(Convert.ToString(dbmngr.GetReservationNumber(rfid)), "TEST1");
                     }
-                    return;
-                    
+                    break;
+
                 }
                 else
                 {
                     GoodCampsite.Text = "&#x2717;";
                     GoodCampsite.CssClass = "form-control alert alert-danger";
-                    continue;
+                    break;
                 }
             }
+            //Send email to new user
+
+            SmtpClient smtpClient = new SmtpClient("192.168.19.163", 25);
+            smtpClient.Credentials = new System.Net.NetworkCredential("administration@sme.com", "Password1");
+            smtpClient.UseDefaultCredentials = true;
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.EnableSsl = false;
+
+            //Creating the mail message
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress("administration@sme.com");
+            mail.To.Add(new MailAddress(user));
+            mail.Subject = "Thank your for registering!";
+            mail.Body = "Thank you for registering with Social Media Events!" + System.Environment.NewLine +
+                "Your usernames are: ";
+            string list = string.Empty;
+            foreach(int i in dbmngr.GetKlanten(dbmngr.GetReservationNumber(Request.QueryString["user"])))
+            {
+                list += i.ToString() + ", ";
+            }
+            mail.Body += list + System.Environment.NewLine + "With the password: 'TEST1'";
+
+            smtpClient.Send(mail);
         }
     }
 }

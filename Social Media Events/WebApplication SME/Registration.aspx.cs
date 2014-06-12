@@ -28,14 +28,13 @@ namespace WebApplication_SME
             DatabaseMngr dbmngr = new DatabaseMngr();
             dbmngr.SetReservation(Name.Text, Street.Text, PostalCode.Text, City.Text, Phone.Text, Email.Text, AccountNumber.Text, SSN.Text, "TEST");
             
-            //*************** TODO ************************
             //Send email to new user
 
-            SmtpClient smtpClient = new SmtpClient("localhost", 25);
+            SmtpClient smtpClient = new SmtpClient("192.168.19.163", 25);
             smtpClient.Credentials = new System.Net.NetworkCredential("administration@sme.com", "Password1");
             smtpClient.UseDefaultCredentials = true;
             smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtpClient.EnableSsl = true;
+            smtpClient.EnableSsl = false;
 
             //Creating the mail message
             MailMessage mail = new MailMessage();
@@ -43,7 +42,7 @@ namespace WebApplication_SME
             mail.To.Add(new MailAddress(Email.Text));
             mail.Subject = "Validate your email address";
             mail.Body = "Thank you for registering with Social Media Events!" + System.Environment.NewLine +
-                "Please check the following data you entered, if anything is incorrect please contact: customers@socialmediaevents.com" + System.Environment.NewLine +
+                "Please check the following data you entered, if anything is incorrect please contact: customers@sme.com" + System.Environment.NewLine +
                 "Name: " + Name.Text + System.Environment.NewLine +
                 "Street: " + Street.Text + System.Environment.NewLine +
                 "Postal code: " + PostalCode.Text + System.Environment.NewLine +
@@ -54,8 +53,7 @@ namespace WebApplication_SME
                 "If this data is correct, please validate your account by visiting this page: " + System.Environment.NewLine +
                 "http://sme.com/Validation.aspx?user=" + dbmngr.GetMaxRFID().ToString();
 
-            //Won't work yet
-            //smtpClient.Send(mail);
+            smtpClient.Send(mail);
             Response.Redirect("Default.aspx");
         }
     }

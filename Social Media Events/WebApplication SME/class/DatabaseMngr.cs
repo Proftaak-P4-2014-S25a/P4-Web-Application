@@ -75,10 +75,10 @@ namespace WebApplication_SME
                 Open();
                 OracleCommand cmd = new OracleCommand("GETMAXRFID", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new OracleParameter("v_result", OracleDbType.Varchar2, 500));
-                cmd.Parameters["v_result"].Direction = ParameterDirection.ReturnValue;
+                cmd.Parameters.Add(new OracleParameter("p_RFID", OracleDbType.Varchar2, 500));
+                cmd.Parameters["p_RFID"].Direction = ParameterDirection.Output;
                 cmd.ExecuteNonQuery();
-                string auth = cmd.Parameters["v_result"].Value.ToString();
+                string auth = cmd.Parameters["p_RFID"].Value.ToString();
                 return Convert.ToInt32(auth);
             }
             catch { }
@@ -136,6 +136,34 @@ namespace WebApplication_SME
             finally { conn.Close(); }
             return list;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<int> GetKlanten(int reservationnumber)
+        {
+            List<int> list = new List<int>();
+            //try
+            //{
+                Open();
+                OracleCommand cmd = new OracleCommand("GetKlant", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new OracleParameter("p_reservationnumber", OracleDbType.Int32, reservationnumber, ParameterDirection.Input));
+                cmd.Parameters.Add(new OracleParameter("p_rfid", OracleDbType.RefCursor, 500)).Direction = ParameterDirection.Output;
+                OracleDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(Convert.ToInt32(reader["rfid"]));
+                }
+            //}
+            //catch
+            //{
+            //}
+            //finally { conn.Close(); }
+            return list;
+        }
+
         /// <summary>
         /// verkrijg alle kampeerplekken
         /// </summary>
