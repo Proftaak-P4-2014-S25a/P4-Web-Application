@@ -25,12 +25,18 @@ namespace WebApplication_SME
 
         protected void entry_Click(object sender, EventArgs e)
         {
-         
+            if (mngr.GetPersoon(info.Text) is Medewerker)
+            {
+                Unsuccess.Visible = false;
+                Succes.Visible = true;
+                TextBox_persons.Text = (mngr.GetPersoon(info.Text).ToString());
+            }
+
             if (mngr.HasPaid(mngr.GetReservationNumber((info.Text))) == "true")
             {
                 Unsuccess.Visible = false;
-                        Succes.Visible = true;
-                        TextBox_persons.Text = (mngr.GetPersoon(info.Text).ToString());
+                Succes.Visible = true;
+                TextBox_persons.Text = (mngr.GetPersoon(info.Text).ToString());
             }
 
             else

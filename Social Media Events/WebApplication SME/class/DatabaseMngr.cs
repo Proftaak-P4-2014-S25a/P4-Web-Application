@@ -63,7 +63,7 @@ namespace WebApplication_SME
             finally { conn.Close(); }
             return false;
         }
-    
+
         /// <summary>
         /// Vekrijg het volgend vrije RFID
         /// </summary>
@@ -107,12 +107,12 @@ namespace WebApplication_SME
             catch { }
             finally { conn.Close(); }
             return null;
-           
+
         }
-/// <summary>
-/// verkrijg alle materialen in de database
-/// </summary>
-/// <returns>lijst materialen</returns>
+        /// <summary>
+        /// verkrijg alle materialen in de database
+        /// </summary>
+        /// <returns>lijst materialen</returns>
         public List<Material> GetMaterials()
         {
             List<Material> list = new List<Material>();
@@ -122,16 +122,16 @@ namespace WebApplication_SME
                 OracleCommand cmd = new OracleCommand("GetAlleMaterialen", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new OracleParameter("v_materials", OracleDbType.RefCursor, 500)).Direction = ParameterDirection.Output;
-                OracleDataReader reader = cmd.ExecuteReader();                
+                OracleDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     list.Add(new Material(Convert.ToString(reader["TYPE"]),
                         Convert.ToDouble(reader["Verhuurprijs"]),
-                        Convert.ToInt32(reader["Aantal"])));                      
+                        Convert.ToInt32(reader["Aantal"])));
                 }
             }
-            catch 
-            { 
+            catch
+            {
             }
             finally { conn.Close(); }
             return list;
@@ -164,7 +164,7 @@ namespace WebApplication_SME
         /// </summary>
         /// <param name="materiaalnaam"></param>
         /// <param name="amount"></param>
-        public void UpdateMateriaal(string materiaalnaam,int amount)
+        public void UpdateMateriaal(string materiaalnaam, int amount)
         {
             try
             {
@@ -174,10 +174,10 @@ namespace WebApplication_SME
                 cmd.Parameters.Add("P_materiaalnaam", OracleDbType.Varchar2, materiaalnaam, ParameterDirection.Input);
                 cmd.Parameters.Add("p_amount", OracleDbType.Int32, amount, ParameterDirection.Input);
                 cmd.ExecuteNonQuery();
-                           
+
             }
             catch { }
-            finally { conn.Close(); }          
+            finally { conn.Close(); }
         }
         /// <summary>
         /// returns een reservationnumber 
@@ -194,10 +194,10 @@ namespace WebApplication_SME
                 cmd.Parameters.Add("p_RFID", OracleDbType.Varchar2, rfid, ParameterDirection.Input);
                 cmd.Parameters.Add(new OracleParameter("v_reservationnumber", OracleDbType.Int32, 500));
                 cmd.Parameters["v_reservationnumber"].Direction = ParameterDirection.Output;
-                cmd.ExecuteNonQuery();                               
+                cmd.ExecuteNonQuery();
                 string auth = cmd.Parameters["v_reservationnumber"].Value.ToString();
                 return Convert.ToInt32(auth);
-                          
+
             }
             catch { }
             finally { conn.Close(); }
@@ -248,77 +248,77 @@ namespace WebApplication_SME
                 {
                     persoonType = Convert.ToString(reader1["type"]);
                 }
-                if (persoonType=="Medewerker")
+                if (persoonType == "Medewerker")
                 {
                     //MEDEWERKER
-                    
-                        sql = "SELECT PER.RFID as RFID, PER.WACHTWOORD as wachtwoord, PER.TYPE as type, med.NAAM as naam, med.functie as functie, med.rekeningnummer as rekeningnummer " +                            
-                            "FROM P4_Persoon per JOIN P4_Medewerker med ON per.RFID = " + RFID + "AND med.RFID = " + RFID;
 
-                        command.CommandText = sql;
-                        OracleDataReader reader2 = command.ExecuteReader();
-                        while (reader2.Read())
-                        {
+                    sql = "SELECT PER.RFID as RFID, PER.WACHTWOORD as wachtwoord, PER.TYPE as type, med.NAAM as naam, med.functie as functie, med.rekeningnummer as rekeningnummer " +
+                        "FROM P4_Persoon per JOIN P4_Medewerker med ON per.RFID = " + RFID + "AND med.RFID = " + RFID;
 
-                            result = new Medewerker( Convert.ToInt32(reader2["RFID"]),
-                                                    Convert.ToString(reader2["wachtwoord"]),
-                                                    Convert.ToString(reader2["naam"]),
-                                                    Convert.ToString(reader2["functie"]),
-                                                    Convert.ToString(reader2["rekeningnummer"]));                                                                                                
-                        }
-                        return result;
+                    command.CommandText = sql;
+                    OracleDataReader reader2 = command.ExecuteReader();
+                    while (reader2.Read())
+                    {
+
+                        result = new Medewerker(Convert.ToInt32(reader2["RFID"]),
+                                                Convert.ToString(reader2["wachtwoord"]),
+                                                Convert.ToString(reader2["naam"]),
+                                                Convert.ToString(reader2["functie"]),
+                                                Convert.ToString(reader2["rekeningnummer"]));
+                    }
+                    return result;
                 }
-                    //HOOFDBEZOEKER
-                   else if (persoonType=="Klant_betalend")
-                   {
-                        sql = "SELECT PER.RFID as RFID, PER.WACHTWOORD as wachtwoord, PER.TYPE as type, KB.Naam AS naam, KB.Straat AS Straat,	KB.POSTCODE AS postcode," +
-                            "KB.Woonplaats AS Woonplaats, KB.TELEFOON as TELEFOON, KB.EMAIL as email, KB.REKENINGNUMMER AS REKENINGNUMMER, KB.SOFINUMMER AS SOFINUMMER ,KB.RESERVERINGSNUMMER FROM P4_Persoon per JOIN P4_klant_betalend KB ON per.RFID = "
-                            + RFID + "AND KB.RFID = " + RFID;
-
-                        command.CommandText = sql;
-                        OracleDataReader reader3 = command.ExecuteReader();
-                        while (reader3.Read())
-                        {                          
-                            result = new KlantBetalend(Convert.ToInt32(reader3["RFID"]),
-                                                    Convert.ToString(reader3["wachtwoord"]),
-                                                    Convert.ToString(reader3["naam"]),
-                                                    Convert.ToString(reader3["Straat"]),
-                                                    Convert.ToString(reader3["postcode"]),
-                                                    Convert.ToString(reader3["Woonplaats"]),
-                                                    Convert.ToString(reader3["TELEFOON"]),
-                                                    Convert.ToString(reader3["email"]),
-                                                    Convert.ToInt32(reader3["REKENINGNUMMER"]),
-                                                    Convert.ToString(reader3["SOFINUMMER"]),
-                                                    Convert.ToInt32(reader3["RESERVERINGSNUMMER"])
-                                                    );
-                        }
-                        return result;
-                   }
-            
-                else if (persoonType=="Klant")
-                    //Klant
+                //HOOFDBEZOEKER
+                else if (persoonType == "Klant_betalend")
                 {
-                        sql = "SELECT PER.RFID as RFID, PER.WACHTWOORD as wachtwoord, PER.TYPE as type,KL.RESERVERINGSNUMMER AS reserveringsnummer " +
-                            "FROM P4_Persoon per JOIN P4_KLANT KL ON per.RFID = "
-                            + RFID + "AND KL.RFID = " + RFID;
+                    sql = "SELECT PER.RFID as RFID, PER.WACHTWOORD as wachtwoord, PER.TYPE as type, KB.Naam AS naam, KB.Straat AS Straat,	KB.POSTCODE AS postcode," +
+                        "KB.Woonplaats AS Woonplaats, KB.TELEFOON as TELEFOON, KB.EMAIL as email, KB.REKENINGNUMMER AS REKENINGNUMMER, KB.SOFINUMMER AS SOFINUMMER ,KB.RESERVERINGSNUMMER FROM P4_Persoon per JOIN P4_klant_betalend KB ON per.RFID = "
+                        + RFID + "AND KB.RFID = " + RFID;
 
-                        command.CommandText = sql;
-                        OracleDataReader reader4 = command.ExecuteReader();
-                        while (reader4.Read())
-                        {
-                        
-                            result = new Klant      (Convert.ToInt32(reader4["RFID"]),
-                                                    Convert.ToString(reader4["wachtwoord"]),
-                                                    Convert.ToInt32(reader4["reserveringsnummer"]));                                                  
-                        }
+                    command.CommandText = sql;
+                    OracleDataReader reader3 = command.ExecuteReader();
+                    while (reader3.Read())
+                    {
+                        result = new KlantBetalend(Convert.ToInt32(reader3["RFID"]),
+                                                Convert.ToString(reader3["wachtwoord"]),
+                                                Convert.ToString(reader3["naam"]),
+                                                Convert.ToString(reader3["Straat"]),
+                                                Convert.ToString(reader3["postcode"]),
+                                                Convert.ToString(reader3["Woonplaats"]),
+                                                Convert.ToString(reader3["TELEFOON"]),
+                                                Convert.ToString(reader3["email"]),
+                                                Convert.ToInt32(reader3["REKENINGNUMMER"]),
+                                                Convert.ToString(reader3["SOFINUMMER"]),
+                                                Convert.ToInt32(reader3["RESERVERINGSNUMMER"])
+                                                );
+                    }
+                    return result;
                 }
-                return result;                  
+
+                else if (persoonType == "Klant")
+                //Klant
+                {
+                    sql = "SELECT PER.RFID as RFID, PER.WACHTWOORD as wachtwoord, PER.TYPE as type,KL.RESERVERINGSNUMMER AS reserveringsnummer " +
+                        "FROM P4_Persoon per JOIN P4_KLANT KL ON per.RFID = "
+                        + RFID + "AND KL.RFID = " + RFID;
+
+                    command.CommandText = sql;
+                    OracleDataReader reader4 = command.ExecuteReader();
+                    while (reader4.Read())
+                    {
+
+                        result = new Klant(Convert.ToInt32(reader4["RFID"]),
+                                                Convert.ToString(reader4["wachtwoord"]),
+                                                Convert.ToInt32(reader4["reserveringsnummer"]));
+                    }
                 }
-               
+                return result;
+            }
+
             catch
             {
                 return null;
-            }          
+            }
         }
         /// <summary>
         /// maakt een nieuwe reservering aan met gegevens
@@ -333,7 +333,7 @@ namespace WebApplication_SME
         /// <param name="sofinummer">sofinummer</param>
         /// <param name="wachtwoord">wachtwoord</param>
 
-        public void SetReservation(string naam, string straat,string postcode,string woonplaats,string telefoon,string email, string rekeningnummer,string sofinummer,string wachtwoord)
+        public void SetReservation(string naam, string straat, string postcode, string woonplaats, string telefoon, string email, string rekeningnummer, string sofinummer, string wachtwoord)
         {
             try
             {
