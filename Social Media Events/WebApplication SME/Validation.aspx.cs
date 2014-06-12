@@ -36,6 +36,14 @@ namespace WebApplication_SME
 
         protected void Submit_Click(object sender, EventArgs e)
         {
+            int aantal = Convert.ToInt32(tb_Members.Text);
+
+            if(aantal < 0)
+            {
+                string error = "Het aantal extra bezoekers kan niet kleiner dan 0 zijn";
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + error + "');", true);
+            }
+
             GoodCampsite.Visible = true;
             List<int> campsites = dbmngr.GetFreeCampsites();
             foreach (int i in campsites)
@@ -46,7 +54,7 @@ namespace WebApplication_SME
                     GoodCampsite.CssClass = "form-control alert alert-success";
                     string rfid = Request.QueryString["user"];
                     dbmngr.SetKampeerplaats(Convert.ToString(dbmngr.GetReservationNumber(rfid)), tb_CampSite.Text);
-                    for (int x = 1; x <= Convert.ToInt32(tb_Members.Text); x++)
+                    for (int x = 1; x <= aantal x++)
                     {
                         dbmngr.AddKlant(Convert.ToString(dbmngr.GetReservationNumber(rfid)), "TEST1");
                     }
