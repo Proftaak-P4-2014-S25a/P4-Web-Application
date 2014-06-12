@@ -34,111 +34,56 @@ namespace WebApplication_SME
                 return;
             }
             
-
             if (txt_Chosen1.Text == "")
             {
-                string item = Convert.ToString(lbox_Rentables.SelectedItem);
-                string type = item.Substring(0, item.IndexOf(","));
+                LoanMaterial(txt_Chosen1.Text, Label10.Text);
+            }
+            else if (txt_Chosen2.Text == "")
+            {
+                LoanMaterial(txt_Chosen2.Text, Label8.Text);
+            }
+            else if (txt_Chosen3.Text == "")
+            {
+                LoanMaterial(txt_Chosen3.Text, Label7.Text);
+            }
+            else if (txt_Chosen4.Text == "")
+            {
+                LoanMaterial(txt_Chosen4.Text, Label10.Text);
+            }
+            else if (txt_Chosen5.Text == "")
+            {
+                LoanMaterial(txt_Chosen5.Text, Label6.Text);
+            }
+        }
 
-                foreach (Material m in Materials)
+        public void LoanMaterial(string chosenbox, string chosenlabel)
+        {
+            string item = Convert.ToString(lbox_Rentables.SelectedItem);
+            string type = item.Substring(0, item.IndexOf(","));
+            string chosen = Convert.ToString(chosenbox);
+
+            foreach (Material m in Materials)
+            {
+                if (m.Type == type)
                 {
-                    if (m.Type == type)
+                    if (m.Amount > 0)
                     {
-                        txt_Chosen1.Text = m.Type;
-                        Label9.Text = Convert.ToString(m.Price);
+                        chosenbox = m.Type;
+                        chosenlabel = Convert.ToString(m.Price);
                         m.Amount--;
                         Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
                         Update(m.Type, m.Amount);
                         Refresh();
                     }
+                    else
+                    {
+                        string error = "MATERIAAL NIET IN VOORRAAD";
+                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + error + "');", true);
+                    }
                 }
             }
-            else if (txt_Chosen2.Text == "")
-            {
-               
-                    string item = Convert.ToString(lbox_Rentables.SelectedItem);
-                    string type = item.Substring(0, item.IndexOf(","));
-
-                    foreach (Material m in Materials)
-                    {
-                        if (m.Type == type)
-                        {
-                            txt_Chosen2.Text = m.Type;
-                            Label8.Text = Convert.ToString(m.Price);
-                            m.Amount--;
-                            Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
-                            Update(m.Type, m.Amount);
-                            Refresh();
-                        }
-                    }
-
-                
-            }
-            else if (txt_Chosen3.Text == "")
-            {
-                
-                    string item = Convert.ToString(lbox_Rentables.SelectedItem);
-                    string type = item.Substring(0, item.IndexOf(","));
-
-                    foreach (Material m in Materials)
-                    {
-                        if (m.Type == type)
-                        {
-                            txt_Chosen3.Text = m.Type;
-                            Label7.Text = Convert.ToString(m.Price);
-                            m.Amount--;
-                            Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
-                            Update(m.Type, m.Amount);
-                            Refresh();
-                        }
-                    }
-
-                
-            }
-            else if (txt_Chosen4.Text == "")
-            {
-                
-                    string item = Convert.ToString(lbox_Rentables.SelectedItem);
-                    string type = item.Substring(0, item.IndexOf(","));
-
-                    foreach (Material m in Materials)
-                    {
-                        if (m.Type == type)
-                        {
-                            txt_Chosen4.Text = m.Type;
-                            Label10.Text = Convert.ToString(m.Price);
-                            m.Amount--;
-                            Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
-                            Update(m.Type, m.Amount);
-                            Refresh();
-                        }
-                    }
-
-                
-            }
-            else if (txt_Chosen5.Text == "")
-            {
-                
-                    string item = Convert.ToString(lbox_Rentables.SelectedItem);
-                    string type = item.Substring(0, item.IndexOf(","));
-
-                    foreach (Material m in Materials)
-                    {
-                        if (m.Type == type)
-                        {
-                            txt_Chosen5.Text = m.Type;
-                            Label6.Text = Convert.ToString(m.Price);
-                            m.Amount--;
-                            Label11.Text = Convert.ToString(Convert.ToInt32(Label6.Text) + Convert.ToInt32(Label7.Text) + Convert.ToInt32(Label8.Text) + Convert.ToInt32(Label9.Text) + Convert.ToInt32(Label10.Text));
-                            Update(m.Type, m.Amount);
-                            Refresh();
-                        }
-                    }
-
-                
-            }
         }
-                    
+                 
         protected void Remove1_Click(object sender, EventArgs e)
         {
             Materials = mngr.GetMaterials();
@@ -256,9 +201,6 @@ namespace WebApplication_SME
         {
             mngr.UpdateMateriaal(materiaalnaam,amount);
         }
-
-     
-
-
     }
 }
+
