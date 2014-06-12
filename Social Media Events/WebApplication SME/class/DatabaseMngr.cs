@@ -311,14 +311,15 @@ namespace WebApplication_SME
                                                 Convert.ToString(reader4["wachtwoord"]),
                                                 Convert.ToInt32(reader4["reserveringsnummer"]));
                     }
-                }
-                return result;
+                }             
             }
 
             catch
             {
                 return null;
             }
+            finally { conn.Close(); }
+            return result;
         }
         /// <summary>
         /// maakt een nieuwe reservering aan met gegevens
