@@ -17,6 +17,7 @@ namespace WebApplication_SME
         {
             if (Request.IsAuthenticated)
             {
+
                 Login.Text = "Logout";
             }
         }
